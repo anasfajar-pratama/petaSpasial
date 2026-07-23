@@ -14,11 +14,12 @@ class ImportShpSample extends Command
     protected $signature = 'import:shp-sample';
     protected $description = 'Pre-import SHP sample data ke database';
 
-    private string $gdal = 'C:/Program Files/PostgreSQL/17/bin/ogr2ogr';
+    private string $gdal;
     private string $tempDir;
 
     public function handle()
     {
+        $this->gdal = config('gdal.bin');
         $this->tempDir = storage_path('app/temp/preimport-' . uniqid());
         mkdir($this->tempDir, 0755, true);
 
@@ -29,7 +30,7 @@ class ImportShpSample extends Command
                 'color' => '#dc2626',
                 'kategori_id' => 7,
                 'description' => 'Batas administrasi kelurahan Kota Sukabumi',
-                'zip' => 'F:\petaSpasial\SHP\Batas Administrasi-20260722T022416Z-1-001.zip',
+                'zip' => base_path('SHP/Batas Administrasi-20260722T022416Z-1-001.zip'),
                 'shp_pattern' => '*_AR.shp',
             ],
             [
@@ -38,7 +39,7 @@ class ImportShpSample extends Command
                 'color' => '#dc2626',
                 'kategori_id' => 7,
                 'description' => 'Garis batas administrasi Kota Sukabumi',
-                'zip' => 'F:\petaSpasial\SHP\Batas Administrasi-20260722T022416Z-1-001.zip',
+                'zip' => base_path('SHP/Batas Administrasi-20260722T022416Z-1-001.zip'),
                 'shp_pattern' => '*_LN.shp',
             ],
             [
@@ -47,7 +48,7 @@ class ImportShpSample extends Command
                 'color' => '#f59e0b',
                 'kategori_id' => 1,
                 'description' => 'Data histori bencana Kota Sukabumi 2016-2024',
-                'zip' => 'F:\petaSpasial\SHP\SHP Histori Bencana 2016-2024-20260722T022432Z-1-001.zip',
+                'zip' => base_path('SHP/SHP Histori Bencana 2016-2024-20260722T022432Z-1-001.zip'),
                 'shp_pattern' => '*.shp',
             ],
             [
@@ -56,7 +57,7 @@ class ImportShpSample extends Command
                 'color' => '#3b82f6',
                 'kategori_id' => 6,
                 'description' => 'Izin Mendirikan Bangunan Kota Sukabumi',
-                'zip' => 'F:\petaSpasial\SHP\SHP IMB-20260722T022505Z-1-001.zip',
+                'zip' => base_path('SHP/SHP IMB-20260722T022505Z-1-001.zip'),
                 'shp_pattern' => '*.shp',
             ],
             [
@@ -65,7 +66,7 @@ class ImportShpSample extends Command
                 'color' => '#8b5cf6',
                 'kategori_id' => 5,
                 'description' => 'Data toponimi (nama tempat) Kota Sukabumi',
-                'zip' => 'F:\petaSpasial\SHP\SHP Toponimi-20260722T031649Z-1-001.zip',
+                'zip' => base_path('SHP/SHP Toponimi-20260722T031649Z-1-001.zip'),
                 'shp_pattern' => '*.shp',
             ],
         ];
@@ -165,8 +166,8 @@ class ImportShpSample extends Command
         $geojsonPath = $this->tempDir . DIRECTORY_SEPARATOR . uniqid() . '.geojson';
 
         $cmd = sprintf(
-            '"%s" -f GeoJSON "%s" "%s" -t_srs EPSG:4326 -lco COORDINATE_PRECISION=6 2>nul',
-            $this->gdal . '.exe',
+            '"%s" -f GeoJSON "%s" "%s" -t_srs EPSG:4326 -lco COORDINATE_PRECISION=6 2>/dev/null',
+            $this->gdal,
             $geojsonPath,
             $shpPath
         );
@@ -175,8 +176,8 @@ class ImportShpSample extends Command
         if ($exitCode !== 0 || !file_exists($geojsonPath)) {
             $this->warn("  GDAL convert failed for $shpPath, trying without reprojection...");
             $cmd = sprintf(
-                '"%s" -f GeoJSON "%s" "%s" -lco COORDINATE_PRECISION=6 2>nul',
-                $this->gdal . '.exe',
+                '"%s" -f GeoJSON "%s" "%s" -lco COORDINATE_PRECISION=6 2>/dev/null',
+                $this->gdal,
                 $geojsonPath,
                 $shpPath
             );
