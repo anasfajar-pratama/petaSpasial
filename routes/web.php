@@ -3,9 +3,23 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return redirect('/login');
+Route::get('/', [App\Http\Controllers\GuestController::class, 'beranda']);
+Route::get('/peta', [App\Http\Controllers\GuestController::class, 'peta']);
+Route::get('/statistik-publik', [App\Http\Controllers\GuestController::class, 'statistik']);
+Route::get('/layer/{slug}', [App\Http\Controllers\GuestController::class, 'layer']);
+Route::get('/data/{id}', [App\Http\Controllers\GuestController::class, 'detailData']);
+
+Route::get('/api/villages', function (Illuminate\Http\Request $r) {
+    $villages = App\Models\Village::where('district_id', $r->district_id)->orderBy('nama')->get(['id', 'nama']);
+    return response()->json($villages);
 });
+Route::get('/api/publik/statistik-ringkas', [App\Http\Controllers\GuestController::class, 'statistikRingkas']);
+Route::get('/api/publik/layers', [App\Http\Controllers\MapPublicController::class, 'layers']);
+Route::get('/api/publik/{layer}/data', [App\Http\Controllers\MapPublicController::class, 'data']);
+Route::get('/api/publik/data', [App\Http\Controllers\MapPublicController::class, 'bbox']);
+Route::get('/api/publik/search', [App\Http\Controllers\MapPublicController::class, 'search']);
+Route::post('/api/publik/buffer', [App\Http\Controllers\MapPublicController::class, 'buffer']);
+Route::get('/api/publik/data-single', [App\Http\Controllers\MapPublicController::class, 'single']);
 
 Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
