@@ -5,21 +5,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const mapEl = document.getElementById('mini-map');
     if (!mapEl) return;
 
+    const districtFilter = mapEl.dataset.district || '';
+
+    const isSatellite = !!districtFilter;
+
     const map = L.map(mapEl, {
         center: [-6.9217, 106.9273],
-        zoom: 11,
+        zoom: isSatellite ? 14 : 11,
         zoomControl: false,
         attributionControl: false,
-        dragging: false,
-        scrollWheelZoom: false,
-        doubleClickZoom: false,
-        touchZoom: false,
-        keyboard: false,
+        dragging: !isSatellite,
+        scrollWheelZoom: !isSatellite,
+        doubleClickZoom: !isSatellite,
+        touchZoom: !isSatellite,
+        keyboard: !isSatellite,
     });
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-    }).addTo(map);
+    if (isSatellite) {
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 19,
+            attribution: '&copy; Esri',
+        }).addTo(map);
+    } else {
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+    }
+
+    if (isSatellite && districtFilter) {
+        L.circleMarker(map.getCenter(), {
+            radius: 8,
+            color: '#ef4444',
+            fillColor: '#ef4444',
+            fillOpacity: 0.3,
+            weight: 2,
+        }).addTo(map).bindTooltip('Kecamatan terpilih', { direction: 'top' });
+    }
 
     const warnaMap = {};
     let allFeatures = [];
@@ -29,7 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(layers => {
             layers.forEach(l => { warnaMap[l.id] = l.warna; });
             const activeIds = layers.map(l => l.id).join(',');
-            return fetch(`/api/map/data?sw_lat=-7.2&sw_lng=106.6&ne_lat=-6.6&ne_lng=107.3&layer_id=${activeIds}`);
+            let url = `/api/map/data?sw_lat=-7.2&sw_lng=106.6&ne_lat=-6.6&ne_lng=107.3&layer_id=${activeIds}&limit=1000`;
+            if (districtFilter) {
+                url += `&district_id=${districtFilter}`;
+            }
+            return fetch(url);
         })
         .then(r => r.json())
         .then(geojson => {
@@ -46,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             Object.entries(grouped).forEach(([lid, feats]) => {
                 const warna = warnaMap[lid] || '#3388ff';
-                const fc = { type: 'FeatureCollection', features: feats.slice(0, 500) };
                 const first = feats[0];
                 const geomType = first?.geometry?.type || 'Point';
                 const isPoint = geomType === 'Point' || geomType === 'MultiPoint';
@@ -59,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         }).addTo(map);
                     });
                 } else {
-                    L.geoJSON(fc, {
+                    L.geoJSON({ type: 'FeatureCollection', features: feats.slice(0, 500) }, {
                         style: {
                             color: warna, weight: 2, opacity: 0.8, fillColor: warna, fillOpacity: 0.15,
                         },
@@ -69,7 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (geojson.features.length > 0) {
                 const bounds = L.geoJSON({ type: 'FeatureCollection', features: geojson.features.slice(0, 1000) }).getBounds();
-                if (bounds.isValid()) map.fitBounds(bounds, { padding: [20, 20] });
+                if (bounds.isValid()) {
+                    if (isSatellite) {
+                        map.fitBounds(bounds, { padding: [30, 30], maxZoom: 16 });
+                    } else {
+                        map.fitBounds(bounds, { padding: [20, 20] });
+                    }
+                }
             }
         })
         .catch(() => {});

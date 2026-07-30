@@ -6,11 +6,11 @@
         </div>
     </div>
 
-    <div class="bg-white rounded-lg shadow p-4 mb-6">
-        <form method="GET" action="{{ route('dashboard') }}" class="flex flex-wrap items-end gap-4">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-5 mb-6">
+        <form method="GET" action="{{ route('dashboard') }}" class="grid grid-cols-1 sm:grid-cols-4 gap-4 items-end">
             <div>
-                <label class="block text-xs font-medium text-gray-600 mb-1">Filter Tahun</label>
-                <select name="tahun" class="border rounded-lg px-3 py-2 text-sm">
+                <label class="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wide">Filter Tahun</label>
+                <select name="tahun" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
                     <option value="">Semua Tahun</option>
                     @foreach ($tahuns as $t)
                         <option value="{{ $t->tahun }}" {{ $tahunFilter == $t->tahun ? 'selected' : '' }}>{{ $t->tahun }}</option>
@@ -18,18 +18,24 @@
                 </select>
             </div>
             <div>
-                <label class="block text-xs font-medium text-gray-600 mb-1">Filter Kecamatan</label>
-                <select name="district" class="border rounded-lg px-3 py-2 text-sm">
+                <label class="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wide">Filter Kecamatan</label>
+                <select name="district" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
                     <option value="">Semua Kecamatan</option>
                     @foreach ($districts as $d)
                         <option value="{{ $d->id }}" {{ $districtFilter == $d->id ? 'selected' : '' }}>{{ $d->nama }}</option>
                     @endforeach
                 </select>
             </div>
-            <button type="submit" class="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700">Terapkan</button>
-            @if ($tahunFilter || $districtFilter)
-                <a href="{{ route('dashboard') }}" class="px-4 py-2 text-sm text-gray-600 border rounded-lg hover:bg-gray-100">Reset</a>
-            @endif
+            <div class="flex gap-2">
+                <button type="submit" class="px-5 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition shadow-sm">
+                    Terapkan
+                </button>
+                @if ($tahunFilter || $districtFilter)
+                    <a href="{{ route('dashboard') }}" class="px-5 py-2 text-sm font-medium text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                        Reset
+                    </a>
+                @endif
+            </div>
         </form>
     </div>
 
@@ -88,9 +94,11 @@
         </div>
     </div>
 
-    <div class="bg-white rounded-lg shadow p-4 mb-8">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-8">
         <h2 class="text-sm font-semibold text-gray-800 mb-2">Peta Ringkasan</h2>
-        <div id="mini-map" class="w-full h-[300px] rounded-lg cursor-pointer border" title="Klik untuk buka peta interaktif"></div>
+        <div id="mini-map" class="w-full h-[300px] rounded-lg cursor-pointer border"
+            data-district="{{ $districtFilter ?? '' }}"
+            title="Klik untuk buka peta interaktif"></div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
@@ -123,11 +131,6 @@
                 <p class="text-gray-400 text-sm py-8 text-center">Belum ada data tahun pada objek spasial.</p>
             @endif
         </div>
-    </div>
-
-    <div class="bg-white rounded-lg shadow p-6">
-        <h2 class="text-lg font-semibold text-gray-800 mb-4">Selamat datang, {{ Auth::user()->name }}!</h2>
-        <p class="text-gray-500">Anda login sebagai <strong>{{ Auth::user()->roles->first()?->name ?? 'User' }}</strong>.</p>
     </div>
 
     @push('scripts')

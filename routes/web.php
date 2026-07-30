@@ -3,11 +3,24 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [App\Http\Controllers\GuestController::class, 'beranda']);
-Route::get('/peta', [App\Http\Controllers\GuestController::class, 'peta']);
-Route::get('/statistik-publik', [App\Http\Controllers\GuestController::class, 'statistik']);
-Route::get('/layer/{slug}', [App\Http\Controllers\GuestController::class, 'layer']);
-Route::get('/data/{id}', [App\Http\Controllers\GuestController::class, 'detailData']);
+Route::middleware(['track.visitor'])->group(function () {
+    Route::get('/', [App\Http\Controllers\GuestController::class, 'beranda']);
+    Route::get('/peta', [App\Http\Controllers\GuestController::class, 'peta']);
+    Route::get('/statistik-publik', [App\Http\Controllers\GuestController::class, 'statistik']);
+    Route::get('/layer/{slug}', [App\Http\Controllers\GuestController::class, 'layer']);
+    Route::get('/data/{id}', [App\Http\Controllers\GuestController::class, 'detailData']);
+
+    Route::prefix('informasi')->name('informasi.')->group(function () {
+        Route::get('/berita', [App\Http\Controllers\GuestController::class, 'berita'])->name('berita');
+        Route::get('/infografis', [App\Http\Controllers\GuestController::class, 'infografis'])->name('infografis');
+        Route::get('/panduan-teknis', [App\Http\Controllers\GuestController::class, 'panduanTeknis'])->name('panduan-teknis');
+        Route::get('/riset-publikasi', [App\Http\Controllers\GuestController::class, 'risetPublikasi'])->name('riset-publikasi');
+    });
+
+    Route::get('/kritik-saran', [App\Http\Controllers\GuestController::class, 'kritikSaran'])->name('kritik-saran');
+    Route::post('/kritik-saran', [App\Http\Controllers\GuestController::class, 'kirimKritikSaran'])->name('kritik-saran.kirim');
+    Route::get('/faq', [App\Http\Controllers\GuestController::class, 'faq'])->name('faq');
+});
 
 Route::get('/api/villages', function (Illuminate\Http\Request $r) {
     $villages = App\Models\Village::where('district_id', $r->district_id)->orderBy('nama')->get(['id', 'nama']);
@@ -51,7 +64,11 @@ Route::middleware(['auth', 'role:Administrator'])->prefix('admin')->name('admin.
     Route::get('/laporan', [App\Http\Controllers\Admin\LaporanController::class, 'index'])->name('laporan');
     Route::get('/laporan/pdf', [App\Http\Controllers\Admin\LaporanController::class, 'cetakPdf'])->name('laporan.pdf');
     Route::get('/laporan/excel', [App\Http\Controllers\Admin\LaporanController::class, 'cetakExcel'])->name('laporan.excel');
-    Route::view('/pengaturan', 'admin.pengaturan')->name('pengaturan');
+    Route::get('/pengaturan', [App\Http\Controllers\Admin\PengaturanController::class, 'index'])->name('pengaturan');
+    Route::put('/pengaturan', [App\Http\Controllers\Admin\PengaturanController::class, 'update'])->name('pengaturan.update');
+    Route::get('/kritik-saran', [App\Http\Controllers\Admin\FeedbackController::class, 'index'])->name('kritik-saran.index');
+    Route::get('/kritik-saran/{feedback}', [App\Http\Controllers\Admin\FeedbackController::class, 'show'])->name('kritik-saran.show');
+    Route::patch('/kritik-saran/{feedback}/read', [App\Http\Controllers\Admin\FeedbackController::class, 'markAsRead'])->name('kritik-saran.read');
 });
 
 Route::middleware(['auth', 'role:Administrator|Operator'])->prefix('admin')->name('admin.')->group(function () {
@@ -67,7 +84,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/map', function () {
         $kategori = App\Models\KategoriLayer::orderBy('nama')->get(['id', 'nama']);
         $districts = App\Models\District::where('regency_id', env('ACTIVE_REGENCY_ID', 1))->orderBy('nama')->get(['id', 'nama']);
-        return view('map.index', compact('kategori', 'districts'));
+        $layers = App\Models\Layer::where('is_active', true)->orderBy('order')->get(['id', 'nama', 'geom_type']);
+        return view('map.index', compact('kategori', 'districts', 'layers'));
     })->name('map');
     Route::view('/statistik', 'statistik.index')->name('statistik');
 

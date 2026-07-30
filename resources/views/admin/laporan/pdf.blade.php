@@ -27,7 +27,7 @@
     <div class="kop">
         <h1>{{ config('app.name') }}</h1>
         <h2>Sistem Informasi Geografis Data Spasial</h2>
-        <p>Kabupaten Sukabumi, Provinsi Jawa Barat</p>
+        <p>Kota Sukabumi, Provinsi Jawa Barat</p>
     </div>
 
     <div class="title">LAPORAN DATA SPASIAL</div>

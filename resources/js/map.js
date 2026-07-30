@@ -3,11 +3,13 @@ import 'leaflet.fullscreen/dist/Control.FullScreen.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import 'leaflet-draw/dist/leaflet.draw.css';
+import 'leaflet-measure/dist/leaflet-measure.css';
 
 import L from 'leaflet';
 import 'leaflet.fullscreen';
 import 'leaflet.markercluster';
 import 'leaflet-draw';
+import 'leaflet-measure';
 
 L.Icon.Default.mergeOptions({
     iconRetinaUrl: new URL('leaflet/dist/images/marker-icon-2x.png', import.meta.url).href,
@@ -31,35 +33,38 @@ const MapManager = {
     radiusLatLng: null,
     bufferActive: false,
     searchTimer: null,
+    _measureControl: null,
+    _initialCenter: [-6.92141012779674, 106.92570044860605],
+    _initialZoom: 18,
 
     init(containerId = 'map') {
         this.canEdit = document.getElementById('draw-layer-select') !== null;
 
         this.map = L.map(containerId, {
-            center: [-6.9217, 106.9273],
-            zoom: 12,
+            center: this._initialCenter,
+            zoom: this._initialZoom,
             zoomControl: false,
-            fullscreenControl: true,
         });
 
-        L.control.zoom({ position: 'topright' }).addTo(this.map);
+        L.control.zoom({ position: 'bottomright' }).addTo(this.map);
         L.control.scale({ imperial: false, position: 'bottomleft' }).addTo(this.map);
 
         this.searchLayer = L.featureGroup().addTo(this.map);
 
         this.initBasemaps();
         this.initCoordinateDisplay();
+        this.initToolbar();
         this.loadLayers();
         this.initDraw();
         this.initDigitasiModal();
         this.initSearch();
-        this.initRadius();
+        this.initModals();
 
         this.map.on('mousemove', (e) => {
             const coordEl = document.getElementById('mouse-coord');
-            if (coordEl) coordEl.textContent = `Lat: ${e.latlng.lat.toFixed(6)}, Lng: ${e.latlng.lng.toFixed(6)}`;
-            const zoomEl = document.getElementById('zoom-level');
-            if (zoomEl) zoomEl.textContent = `Zoom: ${this.map.getZoom()}`;
+            if (coordEl) coordEl.textContent = e.latlng.lat.toFixed(6);
+            const lngEl = document.getElementById('lng-display');
+            if (lngEl) lngEl.textContent = e.latlng.lng.toFixed(6);
         });
 
         this.refreshDebounce = this._debounce(() => this.refreshVisibleLayers(), 400);
@@ -86,41 +91,103 @@ const MapManager = {
     initBasemaps() {
         const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19, attribution: '&copy; OpenStreetMap',
-        }).addTo(this.map);
+        });
 
         const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             maxZoom: 19, attribution: '&copy; Esri',
-        });
+        }).addTo(this.map);
 
         const dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
             maxZoom: 19, attribution: '&copy; CARTO',
         });
 
-        const basemaps = { 'Street': osm, 'Satellite': satellite, 'Dark': dark };
+        this._basemaps = [satellite, osm, dark];
+        this._basemapIndex = 0;
+    },
 
-        document.querySelectorAll('[data-basemap]').forEach((el) => {
-            el.addEventListener('click', () => {
-                this.map.eachLayer((layer) => { if (layer._isBasemap) this.map.removeLayer(layer); });
-                const key = el.dataset.basemap;
-                if (basemaps[key]) { basemaps[key]._isBasemap = true; this.map.addLayer(basemaps[key]); }
+    initCoordinateDisplay() {
+        const coordEl = document.getElementById('mouse-coord');
+        if (coordEl) coordEl.textContent = '-';
+        const lngEl = document.getElementById('lng-display');
+        if (lngEl) lngEl.textContent = '-';
+    },
+
+    initToolbar() {
+        document.querySelectorAll('[data-toolbar]').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const action = btn.dataset.toolbar;
+                switch (action) {
+                    case 'home':
+                        this.map.setView(this._initialCenter, this._initialZoom);
+                        break;
+                    case 'fullscreen':
+                        if (document.fullscreenElement) {
+                            document.exitFullscreen();
+                        } else {
+                            document.documentElement.requestFullscreen();
+                        }
+                        break;
+                    case 'zoom-extent':
+                        this.zoomToAll();
+                        break;
+                    case 'measure':
+                        this.toggleMeasure(btn);
+                        break;
+                    case 'gps':
+                        this.locateMe(btn);
+                        break;
+                    case 'radius':
+                        this.toggleRadius(btn);
+                        break;
+                    case 'basemap':
+                        this._basemapIndex = (this._basemapIndex + 1) % this._basemaps.length;
+                        this.map.eachLayer((layer) => { if (layer._isBasemap) this.map.removeLayer(layer); });
+                        this._basemaps[this._basemapIndex]._isBasemap = true;
+                        this._basemaps[this._basemapIndex].addTo(this.map);
+                        break;
+                }
             });
         });
     },
 
-    initCoordinateDisplay() {
-        const bottomBar = document.getElementById('bottom-bar');
-        if (!bottomBar) return;
-        const coordEl = document.createElement('span');
-        coordEl.id = 'mouse-coord'; coordEl.className = 'text-xs text-gray-300';
-        coordEl.textContent = 'Lat: -, Lng: -';
-        bottomBar.appendChild(coordEl);
-        const sep = document.createElement('span');
-        sep.className = 'text-xs text-gray-500 mx-2'; sep.textContent = '|';
-        bottomBar.appendChild(sep);
-        const zoomEl = document.createElement('span');
-        zoomEl.id = 'zoom-level'; zoomEl.className = 'text-xs text-gray-300';
-        zoomEl.textContent = 'Zoom: 12';
-        bottomBar.appendChild(zoomEl);
+    toggleMeasure(btn) {
+        if (this._measureControl) {
+            this.map.removeControl(this._measureControl);
+            this._measureControl = null;
+            btn.classList.remove('active');
+        } else {
+            this._measureControl = L.control.measure({
+                primaryLengthUnit: 'kilometers',
+                secondaryLengthUnit: 'meters',
+                primaryAreaUnit: 'hectares',
+                secondaryAreaUnit: 'sqmeters',
+                position: 'topleft',
+            }).addTo(this.map);
+            btn.classList.add('active');
+        }
+    },
+
+    locateMe(btn) {
+        if (!navigator.geolocation) {
+            alert('Geolocation tidak didukung browser ini.');
+            return;
+        }
+        btn.classList.add('active');
+        navigator.geolocation.getCurrentPosition(
+            (pos) => {
+                const { latitude, longitude } = pos.coords;
+                this.map.flyTo([latitude, longitude], 16);
+                L.circleMarker([latitude, longitude], {
+                    radius: 8, color: '#2563eb', fillColor: '#2563eb', fillOpacity: 0.8, weight: 2,
+                }).addTo(this.map).bindPopup('Lokasi Anda').openPopup();
+                btn.classList.remove('active');
+            },
+            () => {
+                alert('Tidak dapat mengakses lokasi. Periksa izin GPS.');
+                btn.classList.remove('active');
+            },
+            { enableHighAccuracy: true, timeout: 10000 },
+        );
     },
 
     async loadLayers() {
@@ -130,11 +197,7 @@ const MapManager = {
             this.activeLayers = layers;
             this.renderLayerList(layers);
             this.populateDrawSelect(layers);
-            this.populateLayerFilter(layers);
         } catch (e) { console.error('Gagal load layers:', e); }
-    },
-
-    populateLayerFilter(layers) {
     },
 
     initSearch() {
@@ -176,7 +239,7 @@ const MapManager = {
     },
 
     async loadVillages(districtId, selectEl) {
-        selectEl.innerHTML = '<option value="">Desa</option>';
+        selectEl.innerHTML = '<option value="">Kelurahan</option>';
         selectEl.disabled = !districtId;
         if (!districtId) return;
         try {
@@ -232,7 +295,7 @@ const MapManager = {
         const info = document.getElementById('search-info');
         const count = document.getElementById('search-count');
         if (!data.features || data.features.length === 0) {
-            if (info) info.classList.add('hidden');
+            if (info) info.classList.remove('hidden');
             if (count) count.textContent = 'Tidak ditemukan';
             return;
         }
@@ -240,7 +303,6 @@ const MapManager = {
         const bounds = [];
         data.features.forEach(f => {
             const props = f.properties || {};
-            const warna = props.layer_warna || '#fbbf24';
             const coords = f.geometry.coordinates;
             let layer;
 
@@ -284,34 +346,7 @@ const MapManager = {
         if (info) info.classList.add('hidden');
     },
 
-    initRadius() {
-        const btn = document.getElementById('btn-radius');
-        const modal = document.getElementById('radius-modal');
-        if (!btn || !modal) return;
-
-        btn.addEventListener('click', () => {
-            this.bufferActive = !this.bufferActive;
-            btn.classList.toggle('bg-blue-600', this.bufferActive);
-            btn.classList.toggle('border-blue-500', this.bufferActive);
-            btn.textContent = this.bufferActive ? '📍 Klik peta' : '🔘 Radius';
-
-            if (this.bufferActive) {
-                this.map.once('click', (e) => {
-                    if (!this.bufferActive) return;
-                    this.radiusLatLng = e.latlng;
-                    if (this.radiusCenter) this.map.removeLayer(this.radiusCenter);
-                    this.radiusCenter = L.circleMarker([e.latlng.lat, e.latlng.lng], {
-                        radius: 6, color: '#dc2626', fillColor: '#dc2626', fillOpacity: 1, weight: 2,
-                    }).addTo(this.map).bindPopup('Pusat radius').openPopup();
-
-                    document.getElementById('radius-modal').classList.remove('hidden');
-                    document.getElementById('radius-modal').classList.add('flex');
-                });
-            } else {
-                this.clearBuffer();
-            }
-        });
-
+    initModals() {
         document.getElementById('radius-batal')?.addEventListener('click', () => {
             document.getElementById('radius-modal').classList.add('hidden');
             document.getElementById('radius-modal').classList.remove('flex');
@@ -325,6 +360,42 @@ const MapManager = {
             document.getElementById('radius-modal').classList.remove('flex');
             this.doBufferSearch(this.radiusLatLng.lat, this.radiusLatLng.lng, radius);
         });
+
+        document.getElementById('btn-hapus-semua')?.addEventListener('click', () => {
+            Object.keys(this.layerGroups).forEach((id) => this.removeLayerFromMap(id));
+            document.querySelectorAll('#layer-list input[type="checkbox"]').forEach((cb) => cb.checked = false);
+        });
+    },
+
+    toggleRadius(btn) {
+        const modal = document.getElementById('radius-modal');
+        if (!modal) return;
+
+        this.bufferActive = !this.bufferActive;
+        btn.classList.toggle('active', this.bufferActive);
+        const sidebarBtn = document.getElementById('btn-radius');
+        if (sidebarBtn) {
+            sidebarBtn.classList.toggle('bg-[#0C3F8A]', this.bufferActive);
+            sidebarBtn.classList.toggle('text-white', this.bufferActive);
+            sidebarBtn.classList.toggle('border-[#0C3F8A]', this.bufferActive);
+            sidebarBtn.textContent = this.bufferActive ? '📍 Klik peta' : '🔘 Radius';
+        }
+
+        if (this.bufferActive) {
+            this.map.once('click', (e) => {
+                if (!this.bufferActive) return;
+                this.radiusLatLng = e.latlng;
+                if (this.radiusCenter) this.map.removeLayer(this.radiusCenter);
+                this.radiusCenter = L.circleMarker([e.latlng.lat, e.latlng.lng], {
+                    radius: 6, color: '#dc2626', fillColor: '#dc2626', fillOpacity: 1, weight: 2,
+                }).addTo(this.map).bindPopup('Pusat radius').openPopup();
+
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            });
+        } else {
+            this.clearBuffer();
+        }
     },
 
     async doBufferSearch(lat, lng, radius) {
@@ -394,8 +465,12 @@ const MapManager = {
 
     clearBuffer() {
         this.bufferActive = false;
-        const btn = document.getElementById('btn-radius');
-        if (btn) { btn.classList.remove('bg-blue-600', 'border-blue-500'); btn.textContent = '🔘 Radius'; }
+        document.querySelectorAll('[data-toolbar="radius"]').forEach((btn) => btn.classList.remove('active'));
+        const sidebarBtn = document.getElementById('btn-radius');
+        if (sidebarBtn) {
+            sidebarBtn.classList.remove('bg-[#0C3F8A]', 'text-white', 'border-[#0C3F8A]');
+            sidebarBtn.textContent = '🔘 Radius';
+        }
         if (this.radiusCircle) { this.map.removeLayer(this.radiusCircle); this.radiusCircle = null; }
         if (this.radiusCenter) { this.map.removeLayer(this.radiusCenter); this.radiusCenter = null; }
         this.radiusLatLng = null;
@@ -411,7 +486,7 @@ const MapManager = {
             if (el) el.value = '';
         });
         const village = document.getElementById('filter-village');
-        if (village) { village.innerHTML = '<option value="">Desa</option>'; village.disabled = true; }
+        if (village) { village.innerHTML = '<option value="">Kelurahan</option>'; village.disabled = true; }
     },
 
     renderLayerList(layers) {
@@ -419,31 +494,19 @@ const MapManager = {
         if (!container) return;
         container.innerHTML = '';
 
-        const header = document.createElement('div');
-        header.className = 'flex items-center justify-between pb-2 border-b border-gray-700 mb-2';
-        header.innerHTML = `
-            <span class="text-xs font-semibold text-gray-400 uppercase">Daftar Layer</span>
-            <button data-zoom-all class="text-xs text-blue-400 hover:text-blue-300 flex items-center gap-1">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                Zoom All
-            </button>
-        `;
-        container.appendChild(header);
-        header.querySelector('[data-zoom-all]').addEventListener('click', () => this.zoomToAll());
-
         layers.forEach((layer) => {
             const item = document.createElement('div');
             item.dataset.layerId = layer.id;
-            item.className = 'flex items-center px-3 py-2 hover:bg-gray-700 rounded group';
+            item.className = 'flex items-center px-3 py-2.5 hover:bg-gray-50 rounded-lg group transition-colors';
             item.innerHTML = `
-                <input type="checkbox" class="rounded border-gray-500 mr-2">
-                <span class="layer-spinner hidden w-3 h-3 mr-2">
-                    <svg class="animate-spin text-blue-400 w-3 h-3" viewBox="0 0 16 16" fill="none">
+                <input type="checkbox" class="rounded border-gray-300 mr-3 text-[#0C3F8A] focus:ring-[#0C3F8A]">
+                <span class="layer-spinner hidden w-3.5 h-3.5 mr-2 flex-shrink-0">
+                    <svg class="animate-spin text-[#0C3F8A] w-3.5 h-3.5" viewBox="0 0 16 16" fill="none">
                         <circle class="opacity-25" cx="8" cy="8" r="7" stroke="currentColor" stroke-width="2"/>
                         <path class="opacity-75" fill="currentColor" d="M8 0a8 8 0 018 8h-2a6 6 0 00-6-6V0z"/>
                     </svg>
                 </span>
-                <span class="geom-preview mr-2 inline-flex items-center justify-center w-5 h-5 rounded" style="background:${layer.warna}20; border:1px solid ${layer.warna}">
+                <span class="geom-preview mr-2 inline-flex items-center justify-center w-5 h-5 rounded flex-shrink-0" style="background:${layer.warna}20; border:1px solid ${layer.warna}">
                     ${layer.geom_type === 'Point'
                         ? `<svg class="w-2.5 h-2.5" fill="${layer.warna}" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3.5"/></svg>`
                         : layer.geom_type === 'LineString'
@@ -451,9 +514,9 @@ const MapManager = {
                         : `<svg class="w-3 h-3" viewBox="0 0 6 6"><polygon points="3,0 6,6 0,6" fill="${layer.warna}" opacity="0.5" stroke="${layer.warna}" stroke-width="0.5"/></svg>`
                     }
                 </span>
-                <span class="text-sm text-gray-200 flex-1 truncate">${layer.nama}</span>
-                <button data-zoom-layer="${layer.id}" class="opacity-0 group-hover:opacity-100 text-gray-500 hover:text-white transition mr-1" title="Zoom ke layer">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <span class="text-sm text-[#1E1E1E] flex-1 truncate">${layer.nama}</span>
+                <button data-zoom-layer="${layer.id}" class="opacity-0 group-hover:opacity-100 w-7 h-7 flex items-center justify-center text-gray-400 hover:text-[#0C3F8A] transition rounded" title="Zoom ke layer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 </button>
             `;
             container.appendChild(item);

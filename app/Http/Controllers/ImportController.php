@@ -219,29 +219,38 @@ class ImportController extends Controller
 
             foreach ($shpFiles as $shpPath) {
                 $geojsonPath = $tempDir . DIRECTORY_SEPARATOR . uniqid() . '.geojson';
+                $errFile = $tempDir . DIRECTORY_SEPARATOR . uniqid() . '.err';
 
                 if ($useGdal) {
                     $cmd = sprintf(
-                        '"%s" -f GeoJSON "%s" "%s" -t_srs EPSG:4326 -lco COORDINATE_PRECISION=6 2>nul',
+                        '"%s" -f GeoJSON "%s" "%s" -t_srs EPSG:4326 -lco COORDINATE_PRECISION=6 2>"%s"',
                         $gdalBin . '.exe',
                         $geojsonPath,
-                        $shpPath
+                        $shpPath,
+                        $errFile
                     );
                     exec($cmd, $output, $exitCode);
 
                     if ($exitCode !== 0 || !file_exists($geojsonPath)) {
+                        $errMsg = file_exists($errFile) ? file_get_contents($errFile) : 'unknown error';
                         $cmd = sprintf(
-                            '"%s" -f GeoJSON "%s" "%s" -lco COORDINATE_PRECISION=6 2>nul',
+                            '"%s" -f GeoJSON "%s" "%s" -lco COORDINATE_PRECISION=6 2>"%s"',
                             $gdalBin . '.exe',
                             $geojsonPath,
-                            $shpPath
+                            $shpPath,
+                            $errFile
                         );
                         exec($cmd, $output, $exitCode);
+                        if ($exitCode !== 0 || !file_exists($geojsonPath)) {
+                            $errMsg2 = file_exists($errFile) ? file_get_contents($errFile) : 'unknown error';
+                            return back()->with('error', "GDAL convert gagal: $errMsg2")->withInput();
+                        }
                     }
                 } else {
                     $this->convertShpViaLib($shpPath, $geojsonPath);
                 }
 
+                @unlink($errFile);
                 if (!file_exists($geojsonPath)) continue;
 
                 $geojson = json_decode(file_get_contents($geojsonPath), true);

@@ -6,8 +6,12 @@ use App\Models\KategoriLayer;
 use App\Models\District;
 use App\Models\Layer;
 use App\Models\DataSpasial;
+use App\Models\Feedback;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Laravel\Facades\Image;
 
 class GuestController extends Controller
 {
@@ -33,9 +37,11 @@ class GuestController extends Controller
             GROUP BY tipe ORDER BY c DESC
         ");
 
+        $settings = Setting::pluck('value', 'key')->toArray();
+
         return view('guest.beranda', compact(
             'totalLayers', 'totalDistricts', 'totalCategories',
-            'totalObjects', 'objectsByType'
+            'totalObjects', 'objectsByType', 'settings'
         ));
     }
 
@@ -151,6 +157,81 @@ class GuestController extends Controller
         }
 
         return view('guest.detail-data', compact('data', 'geometry'));
+    }
+
+    public function berita()
+    {
+        return view('guest.informasi.berita');
+    }
+
+    public function infografis()
+    {
+        return view('guest.informasi.infografis');
+    }
+
+    public function panduanTeknis()
+    {
+        return view('guest.informasi.panduan-teknis');
+    }
+
+    public function risetPublikasi()
+    {
+        return view('guest.informasi.riset-publikasi');
+    }
+
+    public function kritikSaran()
+    {
+        return view('guest.kritik-saran');
+    }
+
+    public function kirimKritikSaran(Request $request)
+    {
+        $validated = $request->validate([
+            'nama' => 'required|string|max:100',
+            'email' => 'required|email|max:100',
+            'subjek' => 'nullable|string|max:150',
+            'pesan' => 'required|string|min:10',
+            'foto_wajah' => 'required|string',
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+        ]);
+
+        Storage::disk('public')->makeDirectory('feedback');
+
+        $foto_wajah = null;
+        if ($request->filled('foto_wajah')) {
+            $data = $request->input('foto_wajah');
+            $data = str_replace('data:image/webp;base64,', '', $data);
+            $data = str_replace(' ', '+', $data);
+            $decoded = base64_decode($data);
+            $filename = 'wajah_' . time() . '_' . uniqid() . '.webp';
+            Storage::disk('public')->put('feedback/' . $filename, $decoded);
+            $foto_wajah = 'feedback/' . $filename;
+        }
+
+        $gambar_path = null;
+        if ($request->hasFile('gambar')) {
+            $img = Image::read($request->file('gambar')->getRealPath());
+            $encoded = $img->toWebp(80);
+            $filename = 'gambar_' . time() . '_' . uniqid() . '.webp';
+            $encoded->save(storage_path('app/public/feedback/' . $filename));
+            $gambar_path = 'feedback/' . $filename;
+        }
+
+        Feedback::create([
+            'nama' => $validated['nama'],
+            'email' => $validated['email'],
+            'subjek' => $validated['subjek'],
+            'pesan' => $validated['pesan'],
+            'foto_wajah' => $foto_wajah,
+            'gambar' => $gambar_path,
+        ]);
+
+        return redirect()->route('kritik-saran')->with('success', 'Terima kasih! Kritik dan saran Anda telah kami terima.');
+    }
+
+    public function faq()
+    {
+        return view('guest.faq');
     }
 
     public function statistikRingkas()

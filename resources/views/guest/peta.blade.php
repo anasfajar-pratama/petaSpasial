@@ -18,7 +18,7 @@
         <div class="flex items-center gap-8">
             <a href="{{ url('/') }}" class="text-[#1E1E1E] font-medium text-sm hover:text-[#0C3F8A] transition-colors">Beranda</a>
             <a href="{{ url('/peta') }}" class="text-[#0C3F8A] font-medium text-sm border-b-2 border-[#0C3F8A] pb-1">Peta</a>
-            <a href="{{ url('/statistik') }}" class="text-[#1E1E1E] font-medium text-sm hover:text-[#0C3F8A] transition-colors">Statistik</a>
+            <a href="{{ url('/statistik-publik') }}" class="text-[#1E1E1E] font-medium text-sm hover:text-[#0C3F8A] transition-colors">Statistik</a>
         </div>
         <div class="w-24"></div>
     </div>

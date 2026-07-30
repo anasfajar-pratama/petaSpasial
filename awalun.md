@@ -328,6 +328,6 @@ Password : "Kerjaituibadah99#"  (pakai quote karena ada karakter #)
 
 ### Konfigurasi Region (di .env)
 ```
-ACTIVE_REGENCY_ID=1    # 1 = Sukabumi
+ACTIVE_REGENCY_ID=1    # 1 = Kota Sukabumi
 ```
 Saat ingin ganti daerah (misal Karawang), cukup ganti value ini + seed data wilayah yang sesuai.

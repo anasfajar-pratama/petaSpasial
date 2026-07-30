@@ -10,6 +10,7 @@ export default defineConfig({
                 'resources/js/map.js',
                 'resources/js/map-public.js',
                 'resources/js/dashboard.js',
+                'resources/js/kritik-saran.js',
             ],
             refresh: true,
         }),

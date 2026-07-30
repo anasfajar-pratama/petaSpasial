@@ -4,6 +4,7 @@
 > Teknologi: Laravel 11 + PostgreSQL/PostGIS + Leaflet.js
 
 ---
+import by cli : php artisan import:shp-sample
 
 ## Daftar Isi
 

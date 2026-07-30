@@ -33,7 +33,7 @@ php artisan serve
 ## Seed Data
 
 - 7 kategori layer (Infrastruktur, Bangunan, Perairan, Lahan, dll)
-- Kabupaten Sukabumi + 47 kecamatan + 403 desa/kelurahan
+- Kota Sukabumi + 7 kecamatan + 33 kelurahan
 - 3 role (Administrator, Operator, Viewer) + 11 permissions
 
 ## Tech Stack
