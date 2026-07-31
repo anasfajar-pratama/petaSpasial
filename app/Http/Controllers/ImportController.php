@@ -370,8 +370,6 @@ class ImportController extends Controller
             }
         }
 
-        $reader->close();
-
         file_put_contents($geojsonPath, json_encode([
             'type' => 'FeatureCollection',
             'features' => $features,

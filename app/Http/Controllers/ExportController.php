@@ -304,7 +304,6 @@ class ExportController extends Controller
             }
         });
 
-        $shp->close();
     }
 
     private function geomFromGeoJson(array $g): ?\Shapefile\Geometry\Geometry
