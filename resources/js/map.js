@@ -828,7 +828,14 @@ const MapManager = {
     },
 
     async submitDigitasi() {
+        if (this._digitasiSubmitting) return;
+        this._digitasiSubmitting = true;
+
         const form = document.getElementById('digitasi-form');
+        const submitBtn = document.getElementById('dig-submit');
+        const originalText = submitBtn?.textContent;
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Menyimpan...'; }
+
         const fd = new FormData(form);
         const dataId = document.getElementById('dig-data-id').value;
 
@@ -857,6 +864,9 @@ const MapManager = {
             }
         } catch (e) {
             alert('Gagal terhubung ke server.');
+        } finally {
+            this._digitasiSubmitting = false;
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
         }
     },
 };

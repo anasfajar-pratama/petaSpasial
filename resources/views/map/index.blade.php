@@ -214,7 +214,7 @@
             <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="border border-[#EAEAEA] rounded-xl p-4">
                     <h4 class="text-sm font-semibold text-[#1E1E1E] mb-3">Import GeoJSON</h4>
-                    <form action="{{ route('import.geojson') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('import.geojson') }}" method="POST" enctype="multipart/form-data" onsubmit="if(this.dataset.sent)return false;this.dataset.sent='1';this.querySelector('button[type=submit]').disabled=true;document.getElementById('import-loading').style.display='flex';">
                         @csrf
                         <div class="mb-3">
                             <select name="layer_id" class="w-full h-9 bg-white border border-[#EAEAEA] rounded-lg px-2 text-xs text-[#1E1E1E] focus:outline-none focus:ring-2 focus:ring-[#0C3F8A]/20" required>
@@ -233,7 +233,7 @@
                 <div class="border border-[#EAEAEA] rounded-xl p-4">
                     <h4 class="text-sm font-semibold text-[#1E1E1E] mb-3">Import CSV</h4>
                     <p class="text-[10px] text-gray-400 mb-2">CSV harus punya kolom <strong>latitude</strong> &amp; <strong>longitude</strong>.</p>
-                    <form action="{{ route('import.csv') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('import.csv') }}" method="POST" enctype="multipart/form-data" onsubmit="if(this.dataset.sent)return false;this.dataset.sent='1';this.querySelector('button[type=submit]').disabled=true;document.getElementById('import-loading').style.display='flex';">
                         @csrf
                         <div class="mb-3">
                             <select name="layer_id" class="w-full h-9 bg-white border border-[#EAEAEA] rounded-lg px-2 text-xs text-[#1E1E1E] focus:outline-none focus:ring-2 focus:ring-[#0C3F8A]/20" required>
@@ -252,7 +252,7 @@
                 <div class="border border-[#EAEAEA] rounded-xl p-4">
                     <h4 class="text-sm font-semibold text-[#1E1E1E] mb-3">Import SHP</h4>
                     <p class="text-[10px] text-gray-400 mb-2">Upload .zip berisi .shp + .shx + .dbf.</p>
-                    <form action="{{ route('import.shp') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('import.shp') }}" method="POST" enctype="multipart/form-data" onsubmit="if(this.dataset.sent)return false;this.dataset.sent='1';this.querySelector('button[type=submit]').disabled=true;document.getElementById('import-loading').style.display='flex';">
                         @csrf
                         <div class="mb-3">
                             <select name="layer_id" class="w-full h-9 bg-white border border-[#EAEAEA] rounded-lg px-2 text-xs text-[#1E1E1E] focus:outline-none focus:ring-2 focus:ring-[#0C3F8A]/20" required>
@@ -271,7 +271,7 @@
                 <div class="border border-[#EAEAEA] rounded-xl p-4">
                     <h4 class="text-sm font-semibold text-[#1E1E1E] mb-3">Import KML</h4>
                     <p class="text-[10px] text-gray-400 mb-2">Upload file .kml atau .kmz.</p>
-                    <form action="{{ route('import.kml') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('import.kml') }}" method="POST" enctype="multipart/form-data" onsubmit="if(this.dataset.sent)return false;this.dataset.sent='1';this.querySelector('button[type=submit]').disabled=true;document.getElementById('import-loading').style.display='flex';">
                         @csrf
                         <div class="mb-3">
                             <select name="layer_id" class="w-full h-9 bg-white border border-[#EAEAEA] rounded-lg px-2 text-xs text-[#1E1E1E] focus:outline-none focus:ring-2 focus:ring-[#0C3F8A]/20" required>
@@ -299,6 +299,17 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div id="import-loading" style="display:none" class="fixed inset-0 z-[4000] bg-black/50 flex items-center justify-center">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 text-center max-w-sm mx-4">
+            <svg class="animate-spin w-12 h-12 mx-auto text-[#0C3F8A]" viewBox="0 0 24 24" fill="none">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+            </svg>
+            <p class="mt-4 text-lg font-semibold text-gray-800">Sedang mengimport data...</p>
+            <p class="mt-1 text-sm text-gray-500">Mohon tunggu, jangan tutup halaman ini.</p>
         </div>
     </div>
 
