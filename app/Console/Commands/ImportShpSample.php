@@ -461,7 +461,7 @@ class ImportShpSample extends Command
         $geojsonPath = $this->tempDir . DIRECTORY_SEPARATOR . uniqid() . '.geojson';
 
         $cmd = sprintf(
-            '"%s" -f GeoJSON "%s" "%s" -t_srs EPSG:4326 -lco COORDINATE_PRECISION=6 2>nul',
+            '"%s" -f GeoJSON "%s" "%s" -t_srs EPSG:4326 -dim XY -lco COORDINATE_PRECISION=6 2>nul',
             $this->gdal,
             $geojsonPath,
             $shpPath
@@ -471,7 +471,7 @@ class ImportShpSample extends Command
         if ($exitCode !== 0 || !file_exists($geojsonPath)) {
             $this->warn("  GDAL convert failed for $shpPath, trying without reprojection...");
             $cmd = sprintf(
-                '"%s" -f GeoJSON "%s" "%s" -lco COORDINATE_PRECISION=6 2>nul',
+                '"%s" -f GeoJSON "%s" "%s" -dim XY -lco COORDINATE_PRECISION=6 2>nul',
                 $this->gdal,
                 $geojsonPath,
                 $shpPath
@@ -496,6 +496,7 @@ class ImportShpSample extends Command
 
             if (!$geometry || !isset($geometry['type'])) continue;
 
+            $geometry = $this->normalizeGeometry($geometry);
             $nama = $props['nama'] ?? $props['Kelurahan'] ?? $props['Nama_Subje'] ?? $props['Bencana'] ?? $props['Lokasi'] ?? ('Fitur ' . ($imported + 1));
             $deskripsi = $props['deskripsi'] ?? $props['Keterangan'] ?? $props['Alamat'] ?? null;
 
@@ -527,6 +528,40 @@ class ImportShpSample extends Command
         $name = preg_replace('/[_-]/', ' ', $name);
         $name = preg_replace('/\s+/', ' ', $name);
         return trim($name);
+    }
+
+    private function normalizeGeometry(array $geometry): array
+    {
+        $typeMap = [
+            'PointM' => 'Point', 'PointZM' => 'Point',
+            'MultiPointM' => 'MultiPoint', 'MultiPointZM' => 'MultiPoint',
+            'LineStringM' => 'LineString', 'LineStringZM' => 'LineString',
+            'MultiLineStringM' => 'MultiLineString', 'MultiLineStringZM' => 'MultiLineString',
+            'PolygonM' => 'Polygon', 'PolygonZM' => 'Polygon',
+            'MultiPolygonM' => 'MultiPolygon', 'MultiPolygonZM' => 'MultiPolygon',
+            'GeometryCollectionM' => 'GeometryCollection', 'GeometryCollectionZM' => 'GeometryCollection',
+        ];
+
+        if (isset($typeMap[$geometry['type']])) {
+            $geometry['type'] = $typeMap[$geometry['type']];
+            $geometry['coordinates'] = $this->stripMCoordinates($geometry['coordinates']);
+        }
+
+        return $geometry;
+    }
+
+    private function stripMCoordinates($coords)
+    {
+        if (!is_array($coords)) return $coords;
+
+        $first = reset($coords);
+        if (is_array($first) && is_numeric(reset($first))) {
+            return array_map(function ($c) {
+                return array_slice($c, 0, 3);
+            }, $coords);
+        }
+
+        return array_map([$this, 'stripMCoordinates'], $coords);
     }
 
     private function nextColor(): string

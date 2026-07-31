@@ -51,6 +51,7 @@ class ImportController extends Controller
                 continue;
             }
 
+            $geometry = $this->normalizeGeometry($geometry);
             $geomType = $this->detectType($geometry['type']);
             if ($geomType !== $layer->geom_type) {
                 $errors[] = "Fitur ke-" . ($i + 1) . ": {$geometry['type']} tidak sesuai layer {$layer->geom_type}";
@@ -161,7 +162,7 @@ class ImportController extends Controller
 
             if ($useGdal) {
                 $cmd = sprintf(
-                    '"%s" -f GeoJSON "%s" "%s" -t_srs EPSG:4326 -lco COORDINATE_PRECISION=6 2>nul',
+                    '"%s" -f GeoJSON "%s" "%s" -t_srs EPSG:4326 -dim XY -lco COORDINATE_PRECISION=6 2>nul',
                     $gdalBin . '.exe',
                     $geojsonPath,
                     $kmlPath
@@ -223,7 +224,7 @@ class ImportController extends Controller
 
                 if ($useGdal) {
                     $cmd = sprintf(
-                        '"%s" -f GeoJSON "%s" "%s" -t_srs EPSG:4326 -lco COORDINATE_PRECISION=6 2>"%s"',
+                        '"%s" -f GeoJSON "%s" "%s" -t_srs EPSG:4326 -dim XY -lco COORDINATE_PRECISION=6 2>"%s"',
                         $gdalBin . '.exe',
                         $geojsonPath,
                         $shpPath,
@@ -234,7 +235,7 @@ class ImportController extends Controller
                     if ($exitCode !== 0 || !file_exists($geojsonPath)) {
                         $errMsg = file_exists($errFile) ? file_get_contents($errFile) : 'unknown error';
                         $cmd = sprintf(
-                            '"%s" -f GeoJSON "%s" "%s" -lco COORDINATE_PRECISION=6 2>"%s"',
+                            '"%s" -f GeoJSON "%s" "%s" -dim XY -lco COORDINATE_PRECISION=6 2>"%s"',
                             $gdalBin . '.exe',
                             $geojsonPath,
                             $shpPath,
@@ -314,6 +315,7 @@ class ImportController extends Controller
 
             if (!$geometry || !isset($geometry['type'])) continue;
 
+            $geometry = $this->normalizeGeometry($geometry);
             $nama = $props['nama'] ?? $props['Nama'] ?? $props['name'] ?? $props['Kelurahan'] ?? $props['Nama_Subje'] ?? $props['Bencana'] ?? ('Fitur ' . ($imported + 1));
             $deskripsi = $props['deskripsi'] ?? $props['Deskripsi'] ?? $props['Keterangan'] ?? $props['Alamat'] ?? null;
 
@@ -397,6 +399,40 @@ class ImportController extends Controller
             'MultiPolygon' => 'MultiPolygon',
             default => 'Point',
         };
+    }
+
+    private function normalizeGeometry(array $geometry): array
+    {
+        $typeMap = [
+            'PointM' => 'Point', 'PointZM' => 'Point',
+            'MultiPointM' => 'MultiPoint', 'MultiPointZM' => 'MultiPoint',
+            'LineStringM' => 'LineString', 'LineStringZM' => 'LineString',
+            'MultiLineStringM' => 'MultiLineString', 'MultiLineStringZM' => 'MultiLineString',
+            'PolygonM' => 'Polygon', 'PolygonZM' => 'Polygon',
+            'MultiPolygonM' => 'MultiPolygon', 'MultiPolygonZM' => 'MultiPolygon',
+            'GeometryCollectionM' => 'GeometryCollection', 'GeometryCollectionZM' => 'GeometryCollection',
+        ];
+
+        if (isset($typeMap[$geometry['type']])) {
+            $geometry['type'] = $typeMap[$geometry['type']];
+            $geometry['coordinates'] = $this->stripMCoordinates($geometry['coordinates']);
+        }
+
+        return $geometry;
+    }
+
+    private function stripMCoordinates($coords)
+    {
+        if (!is_array($coords)) return $coords;
+
+        $first = reset($coords);
+        if (is_array($first) && is_numeric(reset($first))) {
+            return array_map(function ($c) {
+                return array_slice($c, 0, 3);
+            }, $coords);
+        }
+
+        return array_map([$this, 'stripMCoordinates'], $coords);
     }
 
     private function logImport(int $layerId, string $format, int $imported, array $errors = []): void
