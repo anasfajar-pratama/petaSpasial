@@ -27,7 +27,7 @@ class ImportShpSample extends Command
 
     public function handle()
     {
-        $this->gdal = config('gdal.bin') . '.exe';
+        $this->gdal = config('gdal.bin');
         $this->tempDir = storage_path('app/temp/preimport-' . uniqid());
         mkdir($this->tempDir, 0755, true);
 
@@ -433,9 +433,10 @@ class ImportShpSample extends Command
     private function detectGeomType(string $shpPath): ?string
     {
         $cmd = sprintf(
-            '"%s" -so -json "%s" 2>nul',
+            '"%s" -so -json "%s" 2>%s',
             $this->gdal,
-            $shpPath
+            $shpPath,
+            PHP_OS_FAMILY === 'Windows' ? 'nul' : '/dev/null'
         );
         $output = [];
         exec($cmd, $output, $exitCode);
@@ -461,20 +462,22 @@ class ImportShpSample extends Command
         $geojsonPath = $this->tempDir . DIRECTORY_SEPARATOR . uniqid() . '.geojson';
 
         $cmd = sprintf(
-            '"%s" -f GeoJSON "%s" "%s" -t_srs EPSG:4326 -dim XY -lco COORDINATE_PRECISION=6 2>nul',
+            '"%s" -f GeoJSON "%s" "%s" -t_srs EPSG:4326 -dim XY -lco COORDINATE_PRECISION=6 2>%s',
             $this->gdal,
             $geojsonPath,
-            $shpPath
+            $shpPath,
+            PHP_OS_FAMILY === 'Windows' ? 'nul' : '/dev/null'
         );
         exec($cmd, $output, $exitCode);
 
         if ($exitCode !== 0 || !file_exists($geojsonPath)) {
             $this->warn("  GDAL convert failed for $shpPath, trying without reprojection...");
             $cmd = sprintf(
-                '"%s" -f GeoJSON "%s" "%s" -dim XY -lco COORDINATE_PRECISION=6 2>nul',
+                '"%s" -f GeoJSON "%s" "%s" -dim XY -lco COORDINATE_PRECISION=6 2>%s',
                 $this->gdal,
                 $geojsonPath,
-                $shpPath
+                $shpPath,
+                PHP_OS_FAMILY === 'Windows' ? 'nul' : '/dev/null'
             );
             exec($cmd, $output, $exitCode);
         }

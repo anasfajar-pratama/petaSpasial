@@ -162,10 +162,11 @@ class ImportController extends Controller
 
             if ($useGdal) {
                 $cmd = sprintf(
-                    '"%s" -f GeoJSON "%s" "%s" -t_srs EPSG:4326 -dim XY -lco COORDINATE_PRECISION=6 2>nul',
-                    $gdalBin . '.exe',
+                    '"%s" -f GeoJSON "%s" "%s" -t_srs EPSG:4326 -dim XY -lco COORDINATE_PRECISION=6 2>%s',
+                    $gdalBin,
                     $geojsonPath,
-                    $kmlPath
+                    $kmlPath,
+                    PHP_OS_FAMILY === 'Windows' ? 'nul' : '/dev/null'
                 );
                 exec($cmd, $output, $exitCode);
 
@@ -225,7 +226,7 @@ class ImportController extends Controller
                 if ($useGdal) {
                     $cmd = sprintf(
                         '"%s" -f GeoJSON "%s" "%s" -t_srs EPSG:4326 -dim XY -lco COORDINATE_PRECISION=6 2>"%s"',
-                        $gdalBin . '.exe',
+                        $gdalBin,
                         $geojsonPath,
                         $shpPath,
                         $errFile
@@ -236,7 +237,7 @@ class ImportController extends Controller
                         $errMsg = file_exists($errFile) ? file_get_contents($errFile) : 'unknown error';
                         $cmd = sprintf(
                             '"%s" -f GeoJSON "%s" "%s" -dim XY -lco COORDINATE_PRECISION=6 2>"%s"',
-                            $gdalBin . '.exe',
+                            $gdalBin,
                             $geojsonPath,
                             $shpPath,
                             $errFile
