@@ -20,6 +20,7 @@ class Layer extends Model
         'is_active',
         'opacity',
         'order',
+        'tampil',
         'created_by',
     ];
 
@@ -27,6 +28,7 @@ class Layer extends Model
     {
         return [
             'is_active' => 'boolean',
+            'tampil' => 'boolean',
             'opacity' => 'decimal:2',
         ];
     }

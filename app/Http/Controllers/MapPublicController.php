@@ -13,6 +13,7 @@ class MapPublicController extends Controller
     {
         $layers = Layer::with('kategori')
             ->where('is_active', true)
+            ->where('tampil', true)
             ->whereHas('dataSpasial')
             ->withCount('dataSpasial')
             ->orderBy('order')

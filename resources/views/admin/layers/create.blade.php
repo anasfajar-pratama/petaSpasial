@@ -60,6 +60,12 @@
                     <span class="ml-2 text-sm text-gray-700">Aktif</span>
                 </label>
             </div>
+            <div class="mb-4">
+                <label class="inline-flex items-center">
+                    <input type="checkbox" name="tampil" value="1" checked class="rounded border-gray-300">
+                    <span class="ml-2 text-sm text-gray-700">Tampil di Guest</span>
+                </label>
+            </div>
             <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Simpan</button>
         </form>
     </div>

@@ -42,10 +42,12 @@ class LayerController extends Controller
             'deskripsi' => 'nullable|string',
             'opacity' => 'required|numeric|min:0|max:1',
             'order' => 'required|integer|min:0',
+            'tampil' => 'nullable|boolean',
         ]);
 
         $data['slug'] = Str::slug($data['nama']) . '-' . Str::random(4);
         $data['is_active'] = $request->boolean('is_active');
+        $data['tampil'] = $request->boolean('tampil') ?? true;
         $data['created_by'] = auth()->id();
 
         Layer::create($data);
@@ -71,9 +73,11 @@ class LayerController extends Controller
             'deskripsi' => 'nullable|string',
             'opacity' => 'required|numeric|min:0|max:1',
             'order' => 'required|integer|min:0',
+            'tampil' => 'nullable|boolean',
         ]);
 
         $data['is_active'] = $request->boolean('is_active');
+        $data['tampil'] = $request->boolean('tampil') ?? $layer->tampil;
 
         $layer->update($data);
 
