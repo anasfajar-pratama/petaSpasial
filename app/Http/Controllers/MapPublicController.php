@@ -25,6 +25,7 @@ class MapPublicController extends Controller
                 'geom_type' => $l->geom_type,
                 'warna' => $l->warna,
                 'icon_marker' => $l->icon_marker,
+                'style' => $l->style_json,
                 'opacity' => (float) $l->opacity,
                 'kategori' => $l->kategori->nama ?? '-',
                 'feature_count' => (int) $l->data_spasial_count,

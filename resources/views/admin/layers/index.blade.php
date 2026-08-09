@@ -51,7 +51,11 @@
                     <td class="px-6 py-4">{{ $layer->kategori->nama }}</td>
                     <td class="px-6 py-4 text-center text-sm">{{ $layer->geom_type }}</td>
                     <td class="px-6 py-4 text-center">
-                        <span class="inline-block w-6 h-6 rounded border" style="background-color: {{ $layer->warna }}; opacity: {{ $layer->opacity }}"></span>
+                        @if ($layer->icon_marker)
+                            <img src="{{ $layer->icon_marker }}" alt="ikon" class="inline-block w-6 h-6 object-contain" title="{{ $layer->icon_marker }}">
+                        @else
+                            <span class="inline-block w-6 h-6 rounded border" style="background-color: {{ $layer->warna }}; opacity: {{ $layer->opacity }}"></span>
+                        @endif
                     </td>
                     <td class="px-6 py-4 text-center text-sm">{{ $layer->order }}</td>
                     <td class="px-6 py-4 text-center">

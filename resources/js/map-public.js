@@ -464,10 +464,12 @@ const MapManager = {
                 </span>
                 <span class="geom-preview mr-2 inline-flex items-center justify-center w-5 h-5 rounded flex-shrink-0" style="background:${layer.warna}20; border:1px solid ${layer.warna}">
                     ${layer.geom_type === 'Point'
-                        ? `<svg class="w-2.5 h-2.5" fill="${layer.warna}" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3.5"/></svg>`
+                        ? (layer.icon_marker
+                            ? `<img class="w-5 h-5 object-contain" src="${layer.icon_marker}" alt="">`
+                            : `<svg class="w-2.5 h-2.5" fill="${layer.warna}" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3.5"/></svg>`)
                         : layer.geom_type === 'LineString'
-                        ? `<svg class="w-3.5 h-2" viewBox="0 0 14 4"><line x1="0" y1="2" x2="14" y2="2" stroke="${layer.warna}" stroke-width="2"/></svg>`
-                        : `<svg class="w-3 h-3" viewBox="0 0 6 6"><polygon points="3,0 6,6 0,6" fill="${layer.warna}" opacity="0.5" stroke="${layer.warna}" stroke-width="0.5"/></svg>`
+                        ? `<svg class="w-3.5 h-2" viewBox="0 0 14 4"><line x1="0" y1="2" x2="14" y2="2" stroke="${layer.style?.color || layer.warna}" stroke-width="2" ${layer.style?.dash?.length ? `stroke-dasharray="${layer.style.dash.join(' ')}"` : ''}/></svg>`
+                        : `<svg class="w-3 h-3" viewBox="0 0 6 6"><polygon points="3,0 6,6 0,6" fill="${layer.style?.color || layer.warna}" opacity="0.5" stroke="${layer.style?.outline || layer.warna}" stroke-width="0.5"/></svg>`
                     }
                 </span>
                 <span class="text-sm text-[#1E1E1E] flex-1 truncate">${layer.nama}</span>
@@ -531,21 +533,35 @@ const MapManager = {
         let geoLayer;
         if (layer.geom_type === 'Point') {
             geoLayer = L.markerClusterGroup({ chunkedLoading: true, maxClusterRadius: 50 });
+            const pointIcon = layer.icon_marker ? L.icon({
+                iconUrl: layer.icon_marker,
+                iconSize: [34, 34],
+                iconAnchor: [17, 28],
+                popupAnchor: [0, -28],
+            }) : null;
             geojson.features.forEach((f) => {
                 const c = f.geometry.coordinates;
-                const m = L.circleMarker([c[1], c[0]], {
-                    radius: 8, fillColor: layer.warna, color: '#fff', weight: 2, opacity: 1, fillOpacity: layer.opacity,
-                });
+                const m = layer.icon_marker
+                    ? L.marker([c[1], c[0]], { icon: pointIcon })
+                    : L.circleMarker([c[1], c[0]], {
+                        radius: 8, fillColor: layer.warna, color: '#fff', weight: 2, opacity: 1, fillOpacity: layer.opacity,
+                    });
                 m._dataId = f.properties?.id;
                 m._layerId = layer.id;
                 m.bindPopup(this.buildPopup(f.properties));
                 geoLayer.addLayer(m);
             });
         } else {
+            const s = layer.style || {};
+            const dash = Array.isArray(s.dash) && s.dash.length ? s.dash.join(' ') : undefined;
             geoLayer = L.geoJSON(geojson, {
                 style: {
-                    color: layer.warna, weight: layer.geom_type === 'LineString' ? 3 : 2,
-                    opacity: layer.opacity, fillColor: layer.warna, fillOpacity: layer.geom_type === 'Polygon' ? layer.opacity * 0.3 : 0,
+                    color: s.outline || layer.warna,
+                    weight: s.weight ?? (layer.geom_type === 'LineString' ? 3 : 2),
+                    dashArray: dash,
+                    opacity: layer.opacity,
+                    fillColor: s.color || layer.warna,
+                    fillOpacity: layer.geom_type === 'Polygon' ? (s.pattern === 'hatch' ? layer.opacity * 0.15 : layer.opacity * 0.3) : 0,
                 },
                 onEachFeature: (f, fl) => {
                     if (f.properties) {

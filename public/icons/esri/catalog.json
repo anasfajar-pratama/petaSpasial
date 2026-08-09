@@ -1,0 +1,4562 @@
+{
+  "markers": [
+    {
+      "name": "Bak Kontrol",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,yellow,character,ESRI Default Marker,black,orange",
+      "type": "marker",
+      "color": "#ffff00",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/bak-kontrol.png",
+      "slug": "bak-kontrol"
+    },
+    {
+      "name": "Bak Penampungan Air Hujan",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue,character,ESRI ArcPad,white,ESRI US Forestry 1,ESRI Default Marker",
+      "type": "marker",
+      "color": "#005ae6",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI ArcPad",
+        "ESRI Default Marker",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/bak-penampungan-air-hujan.png",
+      "slug": "bak-penampungan-air-hujan"
+    },
+    {
+      "name": "Bak Perangkap Lemak dan Minyak dari Dapur",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,black,character,ESRI Default Marker,orange,yellow",
+      "type": "marker",
+      "color": "#d4b308",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/bak-perangkap-lemak-dan-minyak-dari-dapur.png",
+      "slug": "bak-perangkap-lemak-dan-minyak-dari-dapur"
+    },
+    {
+      "name": "Bandar Udara Khusus",
+      "category": "Jaringan Transportasi ",
+      "tags": "rgb,black,character,ESRI Default Marker",
+      "type": "marker",
+      "color": "#000000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/bandar-udara-khusus.png",
+      "slug": "bandar-udara-khusus"
+    },
+    {
+      "name": "Bandar Udara Pengumpan",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,white,character,ESRI Default Marker,black",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/bandar-udara-pengumpan.png",
+      "slug": "bandar-udara-pengumpan"
+    },
+    {
+      "name": "Bandar Udara Pengumpul",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,white,character,ESRI Default Marker,ESRI US Forestry 1,black",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/bandar-udara-pengumpul.png",
+      "slug": "bandar-udara-pengumpul"
+    },
+    {
+      "name": "Bandar Udara Pengumpul Skala Pelayanan Primer",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,white,character,ESRI Default Marker,ESRI US Forestry 1,red",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/bandar-udara-pengumpul-skala-pelayanan-primer.png",
+      "slug": "bandar-udara-pengumpul-skala-pelayanan-primer"
+    },
+    {
+      "name": "Bandar Udara Pengumpul Skala Pelayanan Sekunder",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,white,character,ESRI Default Marker,ESRI US Forestry 1,orange",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/bandar-udara-pengumpul-skala-pelayanan-sekunder.png",
+      "slug": "bandar-udara-pengumpul-skala-pelayanan-sekunder"
+    },
+    {
+      "name": "Bandar Udara Pengumpul Skala Pelayanan Tersier",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,white,character,ESRI Default Marker,ESRI US Forestry 1,orange",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/bandar-udara-pengumpul-skala-pelayanan-tersier.png",
+      "slug": "bandar-udara-pengumpul-skala-pelayanan-tersier"
+    },
+    {
+      "name": "Bangunan Pelengkap Drainase",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,character,ESRI Hazardous Materials,blue,ESRI US Forestry 1,white",
+      "type": "marker",
+      "color": "#005ae6",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Hazardous Materials",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/bangunan-pelengkap-drainase.png",
+      "slug": "bangunan-pelengkap-drainase"
+    },
+    {
+      "name": "Bangunan Penampung Air",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue,character,ESRI Climate & Precipitation,ESRI Hazardous Materials",
+      "type": "marker",
+      "color": "#005ae6",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Climate & Precipitation",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/bangunan-penampung-air.png",
+      "slug": "bangunan-penampung-air"
+    },
+    {
+      "name": "Bangunan Penangkap Mata Air",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,character,ESRI Enviro Hazard Analysis,white",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Enviro Hazard Analysis"
+      ],
+      "icon": "/icons/esri/bangunan-penangkap-mata-air.png",
+      "slug": "bangunan-penangkap-mata-air"
+    },
+    {
+      "name": "Bangunan Pengambil Air Baku",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,white,character,ESRI Enviro Hazard Analysis,ESRI Hazardous Materials,blue",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Enviro Hazard Analysis",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/bangunan-pengambil-air-baku.png",
+      "slug": "bangunan-pengambil-air-baku"
+    },
+    {
+      "name": "Bangunan Pengendalian Banjir",
+      "category": "Jaringan Sumber Daya Air",
+      "tags": "multilayer,rgb,white,character,ESRI Climate & Precipitation,blue,ESRI US Forestry 1,ESRI Default Marker",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Climate & Precipitation",
+        "ESRI Default Marker",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/bangunan-pengendalian-banjir.png",
+      "slug": "bangunan-pengendalian-banjir"
+    },
+    {
+      "name": "Bangunan Peresapan (Kolam Retensi)",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "rgb,blue,character,ESRI Hazardous Materials",
+      "type": "marker",
+      "color": "#005ae6",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/bangunan-peresapan-kolam-retensi.png",
+      "slug": "bangunan-peresapan-kolam-retensi"
+    },
+    {
+      "name": "Bangunan Sumber Daya Air",
+      "category": "Jaringan Sumber Daya Air",
+      "tags": "multilayer,rgb,white,character,blue,ESRI US Forestry 1,ESRI ERS Infrastructures S1",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI ERS Infrastructures S1",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/bangunan-sumber-daya-air.png",
+      "slug": "bangunan-sumber-daya-air"
+    },
+    {
+      "name": "Bangunan Tampungan (Polder)",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue,character,ESRI Hazardous Materials,white",
+      "type": "marker",
+      "color": "#005ae6",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/bangunan-tampungan-polder.png",
+      "slug": "bangunan-tampungan-polder"
+    },
+    {
+      "name": "Bendungan",
+      "category": "Jaringan Sumber Daya Air",
+      "tags": "multilayer,rgb,blue,character,ESRI US Forestry 1,white,ESRI Default Marker",
+      "type": "marker",
+      "color": "#005ae6",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/bendungan.png",
+      "slug": "bendungan"
+    },
+    {
+      "name": "Gardu Distribusi",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,black,character,ESRI Business,white,orange,ESRI Default Marker",
+      "type": "marker",
+      "color": "#000000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Business",
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/gardu-distribusi.png",
+      "slug": "gardu-distribusi"
+    },
+    {
+      "name": "Gardu Hubung",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,black,character,ESRI Business,white,orange,ESRI Default Marker",
+      "type": "marker",
+      "color": "#000000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Business",
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/gardu-hubung.png",
+      "slug": "gardu-hubung"
+    },
+    {
+      "name": "Gardu Induk",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,black,character,ESRI Business,orange,ESRI Default Marker",
+      "type": "marker",
+      "color": "#000000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Business",
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/gardu-induk.png",
+      "slug": "gardu-induk"
+    },
+    {
+      "name": "Gardu Listrik",
+      "category": "Jaringan Energi",
+      "tags": "rgb,black,character,ESRI Business",
+      "type": "marker",
+      "color": "#000000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Business"
+      ],
+      "icon": "/icons/esri/gardu-listrik.png",
+      "slug": "gardu-listrik"
+    },
+    {
+      "name": "Halte",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,white,character,ESRI Transportation & Civic,ESRI Default Marker,red",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI Transportation & Civic"
+      ],
+      "icon": "/icons/esri/halte.png",
+      "slug": "halte"
+    },
+    {
+      "name": "Hidran Kebakaran",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,red,character,ESRI US Forestry 1,ESRI Hazardous Materials",
+      "type": "marker",
+      "color": "#e60000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Hazardous Materials",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/hidran-kebakaran.png",
+      "slug": "hidran-kebakaran"
+    },
+    {
+      "name": "Hidran Umum",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue,character,ESRI US Forestry 1,ESRI Hazardous Materials",
+      "type": "marker",
+      "color": "#005ce6",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Hazardous Materials",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/hidran-umum.png",
+      "slug": "hidran-umum"
+    },
+    {
+      "name": "IPAL Komunal Industri Rumah Tangga",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,character,Arial Narrow,ESRI Hazardous Materials,white,orange",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "Arial Narrow",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/ipal-komunal-industri-rumah-tangga.png",
+      "slug": "ipal-komunal-industri-rumah-tangga"
+    },
+    {
+      "name": "IPAL Kota",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,character,Arial Narrow,ESRI Hazardous Materials,white,orange",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "Arial Narrow",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/ipal-kota.png",
+      "slug": "ipal-kota"
+    },
+    {
+      "name": "IPAL Skala Kawasan Tertentu/Permukiman",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,character,Arial Narrow,ESRI Hazardous Materials,white,orange",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "Arial Narrow",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/ipal-skala-kawasan-tertentu-permukiman.png",
+      "slug": "ipal-skala-kawasan-tertentu-permukiman"
+    },
+    {
+      "name": "Infrastruktur Jaringan Mikro Digital",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,character,green,ESRI US Forestry 1,ESRI Arrowhead",
+      "type": "marker",
+      "color": "#3caa00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Arrowhead",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/infrastruktur-jaringan-mikro-digital.png",
+      "slug": "infrastruktur-jaringan-mikro-digital"
+    },
+    {
+      "name": "Infrastruktur Jaringan Tetap",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,character,ESRI US Forestry 1,ESRI Telecom,green",
+      "type": "marker",
+      "color": "#3caa00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Telecom",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/infrastruktur-jaringan-tetap.png",
+      "slug": "infrastruktur-jaringan-tetap"
+    },
+    {
+      "name": "Infrastruktur Minyak dan Gas Bumi",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,orange,character,ESRI Default Marker,ESRI NIMA City Graphic PT,white",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI NIMA City Graphic PT"
+      ],
+      "icon": "/icons/esri/infrastruktur-minyak-dan-gas-bumi.png",
+      "slug": "infrastruktur-minyak-dan-gas-bumi"
+    },
+    {
+      "name": "Infrastruktur Pembangkitan Tenaga Listrik dan Sarana Pendukung",
+      "category": "Jaringan Energi ",
+      "tags": "rgb,character,ESRI Default Marker,black",
+      "type": "marker",
+      "color": "#000000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/infrastruktur-pembangkitan-tenaga-listrik-dan-sarana-pendukung.png",
+      "slug": "infrastruktur-pembangkitan-tenaga-listrik-dan-sarana-pendukung"
+    },
+    {
+      "name": "Infrastruktur Sistem Pengelolaan Air Limbah (SPAL)",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,character,Arial Narrow,ESRI Hazardous Materials,white,orange",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "Arial Narrow",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/infrastruktur-sistem-pengelolaan-air-limbah-spal.png",
+      "slug": "infrastruktur-sistem-pengelolaan-air-limbah-spal"
+    },
+    {
+      "name": "Infrastruktur Sistem Pengelolaan Air Limbah Domestik",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,character,Arial Narrow,ESRI Hazardous Materials,white,gray",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "Arial Narrow",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/infrastruktur-sistem-pengelolaan-air-limbah-domestik.png",
+      "slug": "infrastruktur-sistem-pengelolaan-air-limbah-domestik"
+    },
+    {
+      "name": "Infrastruktur Sistem Pengelolaan Air Limbah Non Domestik",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,character,Arial Narrow,ESRI Hazardous Materials,gray,white",
+      "type": "marker",
+      "color": "#878787",
+      "is_font_based": true,
+      "fonts": [
+        "Arial Narrow",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/infrastruktur-sistem-pengelolaan-air-limbah-non-domestik.png",
+      "slug": "infrastruktur-sistem-pengelolaan-air-limbah-non-domestik"
+    },
+    {
+      "name": "Infrastruktur Sistem Penyediaan Air Minum (SPAM)",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,white,character,ESRI Enviro Hazard Analysis,blue,ESRI Hazardous Materials",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Enviro Hazard Analysis",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/infrastruktur-sistem-penyediaan-air-minum-spam.png",
+      "slug": "infrastruktur-sistem-penyediaan-air-minum-spam"
+    },
+    {
+      "name": "Instalasi Produksi",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue,character,ESRI Enviro Hazard Incident",
+      "type": "marker",
+      "color": "#0037ff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Enviro Hazard Incident"
+      ],
+      "icon": "/icons/esri/instalasi-produksi.png",
+      "slug": "instalasi-produksi"
+    },
+    {
+      "name": "Jaringan Bergerak",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,white,character,ESRI US Forestry 1,green,ESRI Default Marker",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/jaringan-bergerak.png",
+      "slug": "jaringan-bergerak"
+    },
+    {
+      "name": "Jaringan Bergerak Satelit",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,white,character,ESRI US Forestry 1,green,ESRI Default Marker,ESRI Telecom",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI Telecom",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/jaringan-bergerak-satelit.png",
+      "slug": "jaringan-bergerak-satelit"
+    },
+    {
+      "name": "Jaringan Bergerak Seluler",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,character,ESRI US Forestry 1,ESRI Telecom,green",
+      "type": "marker",
+      "color": "#3caa00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Telecom",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/jaringan-bergerak-seluler.png",
+      "slug": "jaringan-bergerak-seluler"
+    },
+    {
+      "name": "Jaringan Bergerak Terestrial",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,character,ESRI US Forestry 1,ESRI Telecom,green",
+      "type": "marker",
+      "color": "#3caa00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Telecom",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/jaringan-bergerak-terestrial.png",
+      "slug": "jaringan-bergerak-terestrial"
+    },
+    {
+      "name": "Jaringan Peningkatan Pelayanan",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,character,green,ESRI Default Marker,ESRI US Forestry 1",
+      "type": "marker",
+      "color": "#3caa00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/jaringan-peningkatan-pelayanan.png",
+      "slug": "jaringan-peningkatan-pelayanan"
+    },
+    {
+      "name": "Jembatan",
+      "category": "Jaringan Transportasi ",
+      "tags": "rgb,black,character,multilayer,ESRI ArcPad,ESRI Default Marker",
+      "type": "marker",
+      "color": "#000000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI ArcPad"
+      ],
+      "icon": "/icons/esri/jembatan.png",
+      "slug": "jembatan"
+    },
+    {
+      "name": "Jembatan Timbang",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,black,character,ESRI Transportation & Civic,white,ESRI Default Marker",
+      "type": "marker",
+      "color": "#000000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI Transportation & Civic"
+      ],
+      "icon": "/icons/esri/jembatan-timbang.png",
+      "slug": "jembatan-timbang"
+    },
+    {
+      "name": "Kotak Pembagi",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,character,ESRI Surveyor,green,ESRI US Forestry 1",
+      "type": "marker",
+      "color": "#3caa00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Surveyor",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/kotak-pembagi.png",
+      "slug": "kotak-pembagi"
+    },
+    {
+      "name": "Lubang Inspeksi",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,white,character,ESRI Default Marker,black,orange",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/lubang-inspeksi.png",
+      "slug": "lubang-inspeksi"
+    },
+    {
+      "name": "Menara Base Transceiver Station (BTS)",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,white,character,ESRI US Forestry 1,green,ESRI Default Marker",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/menara-base-transceiver-station-bts.png",
+      "slug": "menara-base-transceiver-station-bts"
+    },
+    {
+      "name": "Pangkalan Pendaratan Ikan",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,green,character,ESRI Environmental & Icons,ESRI Default Marker,white",
+      "type": "marker",
+      "color": "#00e64d",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Environmental & Icons"
+      ],
+      "icon": "/icons/esri/pangkalan-pendaratan-ikan.png",
+      "slug": "pangkalan-pendaratan-ikan"
+    },
+    {
+      "name": "Pelabuhan Pengumpan",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,character,ESRI Enviro Hazard Sites,white,ESRI Default Marker,blue",
+      "type": "marker",
+      "color": "#8e67fd",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Enviro Hazard Sites"
+      ],
+      "icon": "/icons/esri/pelabuhan-pengumpan.png",
+      "slug": "pelabuhan-pengumpan"
+    },
+    {
+      "name": "Pelabuhan Pengumpan Lokal",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,character,ESRI Enviro Hazard Sites,white,ESRI Default Marker,orange",
+      "type": "marker",
+      "color": "#ed7b2f",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Enviro Hazard Sites"
+      ],
+      "icon": "/icons/esri/pelabuhan-pengumpan-lokal.png",
+      "slug": "pelabuhan-pengumpan-lokal"
+    },
+    {
+      "name": "Pelabuhan Pengumpan Regional",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,character,ESRI Enviro Hazard Sites,white,ESRI Default Marker,green",
+      "type": "marker",
+      "color": "#00e64d",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Enviro Hazard Sites"
+      ],
+      "icon": "/icons/esri/pelabuhan-pengumpan-regional.png",
+      "slug": "pelabuhan-pengumpan-regional"
+    },
+    {
+      "name": "Pelabuhan Pengumpul",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,character,ESRI Enviro Hazard Sites,white,ESRI Default Marker,red",
+      "type": "marker",
+      "color": "#ff0000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Enviro Hazard Sites"
+      ],
+      "icon": "/icons/esri/pelabuhan-pengumpul.png",
+      "slug": "pelabuhan-pengumpul"
+    },
+    {
+      "name": "Pelabuhan Penyeberangan",
+      "category": "Jaringan Transportasi",
+      "tags": "character,ESRI Environmental & Icons,rgb,orange",
+      "type": "marker",
+      "color": "#732600",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Environmental & Icons"
+      ],
+      "icon": "/icons/esri/pelabuhan-penyeberangan.png",
+      "slug": "pelabuhan-penyeberangan"
+    },
+    {
+      "name": "Pelabuhan Penyeberangan Kelas I",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,cmyk,character,ESRI Environmental & Icons,Arial,blue",
+      "type": "marker",
+      "color": "#6991f2",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Environmental & Icons"
+      ],
+      "icon": "/icons/esri/pelabuhan-penyeberangan-kelas-i.png",
+      "slug": "pelabuhan-penyeberangan-kelas-i"
+    },
+    {
+      "name": "Pelabuhan Penyeberangan Kelas II",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,character,ESRI Environmental & Icons,Arial,red,rgb",
+      "type": "marker",
+      "color": "#ff0000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Environmental & Icons"
+      ],
+      "icon": "/icons/esri/pelabuhan-penyeberangan-kelas-ii.png",
+      "slug": "pelabuhan-penyeberangan-kelas-ii"
+    },
+    {
+      "name": "Pelabuhan Penyeberangan Kelas III",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,cmyk,character,ESRI Environmental & Icons,Arial,blue",
+      "type": "marker",
+      "color": "#8f66fc",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Environmental & Icons"
+      ],
+      "icon": "/icons/esri/pelabuhan-penyeberangan-kelas-iii.png",
+      "slug": "pelabuhan-penyeberangan-kelas-iii"
+    },
+    {
+      "name": "Pelabuhan Perikanan Nusantara",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,red,character,ESRI Environmental & Icons,ESRI Default Marker,white",
+      "type": "marker",
+      "color": "#fd7567",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Environmental & Icons"
+      ],
+      "icon": "/icons/esri/pelabuhan-perikanan-nusantara.png",
+      "slug": "pelabuhan-perikanan-nusantara"
+    },
+    {
+      "name": "Pelabuhan Perikanan Pantai",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,blue,character,ESRI Environmental & Icons,ESRI Default Marker,white",
+      "type": "marker",
+      "color": "#8e67fd",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Environmental & Icons"
+      ],
+      "icon": "/icons/esri/pelabuhan-perikanan-pantai.png",
+      "slug": "pelabuhan-perikanan-pantai"
+    },
+    {
+      "name": "Pelabuhan Perikanan Samudera",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,blue,character,ESRI Environmental & Icons,ESRI Default Marker,white",
+      "type": "marker",
+      "color": "#6991f3",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Environmental & Icons"
+      ],
+      "icon": "/icons/esri/pelabuhan-perikanan-samudera.png",
+      "slug": "pelabuhan-perikanan-samudera"
+    },
+    {
+      "name": "Pelabuhan Sungai dan Danau",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,character,ESRI Environmental & Icons,ESRI Default Marker,white,orange",
+      "type": "marker",
+      "color": "#732600",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Environmental & Icons"
+      ],
+      "icon": "/icons/esri/pelabuhan-sungai-dan-danau.png",
+      "slug": "pelabuhan-sungai-dan-danau"
+    },
+    {
+      "name": "Pelabuhan Sungai dan Danau Pengumpan",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,character,ESRI Environmental & Icons,ESRI Default Marker,white,blue",
+      "type": "marker",
+      "color": "#8e67fd",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Environmental & Icons"
+      ],
+      "icon": "/icons/esri/pelabuhan-sungai-dan-danau-pengumpan.png",
+      "slug": "pelabuhan-sungai-dan-danau-pengumpan"
+    },
+    {
+      "name": "Pelabuhan Sungai dan Danau Pengumpul",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,character,ESRI Environmental & Icons,ESRI Default Marker,white,red",
+      "type": "marker",
+      "color": "#ff0000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Environmental & Icons"
+      ],
+      "icon": "/icons/esri/pelabuhan-sungai-dan-danau-pengumpul.png",
+      "slug": "pelabuhan-sungai-dan-danau-pengumpul"
+    },
+    {
+      "name": "Pelabuhan Sungai dan Danau Utama",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,blue,character,ESRI Environmental & Icons,ESRI Default Marker,white",
+      "type": "marker",
+      "color": "#6991fd",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Environmental & Icons"
+      ],
+      "icon": "/icons/esri/pelabuhan-sungai-dan-danau-utama.png",
+      "slug": "pelabuhan-sungai-dan-danau-utama"
+    },
+    {
+      "name": "Pelabuhan Utama",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,blue,character,ESRI Enviro Hazard Sites,white,ESRI Default Marker",
+      "type": "marker",
+      "color": "#6991fd",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Enviro Hazard Sites"
+      ],
+      "icon": "/icons/esri/pelabuhan-utama.png",
+      "slug": "pelabuhan-utama"
+    },
+    {
+      "name": "Pembangkit Listrik Lainnya",
+      "category": "Jaringan Energi",
+      "tags": "rgb,gray,character,ESRI Default Marker",
+      "type": "marker",
+      "color": "#686868",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/pembangkit-listrik-lainnya.png",
+      "slug": "pembangkit-listrik-lainnya"
+    },
+    {
+      "name": "Pembangkit Listrik Tenaga Air (PLTA)",
+      "category": "Jaringan Energi",
+      "tags": "rgb,blue,character,ESRI Default Marker",
+      "type": "marker",
+      "color": "#0046ff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/pembangkit-listrik-tenaga-air-plta.png",
+      "slug": "pembangkit-listrik-tenaga-air-plta"
+    },
+    {
+      "name": "Pembangkit Listrik Tenaga Bayu (PLTB)",
+      "category": "Jaringan Energi",
+      "tags": "hsv,purple,character,ESRI Default Marker",
+      "type": "marker",
+      "color": "#c300ff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/pembangkit-listrik-tenaga-bayu-pltb.png",
+      "slug": "pembangkit-listrik-tenaga-bayu-pltb"
+    },
+    {
+      "name": "Pembangkit Listrik Tenaga Diesel (PLTD)",
+      "category": "Jaringan Energi",
+      "tags": "rgb,orange,character,ESRI Default Marker",
+      "type": "marker",
+      "color": "#a83800",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/pembangkit-listrik-tenaga-diesel-pltd.png",
+      "slug": "pembangkit-listrik-tenaga-diesel-pltd"
+    },
+    {
+      "name": "Pembangkit Listrik Tenaga Gas (PLTG)",
+      "category": "Jaringan Energi",
+      "tags": "rgb,blue,character,ESRI Default Marker",
+      "type": "marker",
+      "color": "#00ffbe",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/pembangkit-listrik-tenaga-gas-pltg.png",
+      "slug": "pembangkit-listrik-tenaga-gas-pltg"
+    },
+    {
+      "name": "Pembangkit Listrik Tenaga Mikro Hidro (PLTMH)",
+      "category": "Jaringan Energi",
+      "tags": "rgb,green,character,ESRI Default Marker",
+      "type": "marker",
+      "color": "#46e600",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/pembangkit-listrik-tenaga-mikro-hidro-pltmh.png",
+      "slug": "pembangkit-listrik-tenaga-mikro-hidro-pltmh"
+    },
+    {
+      "name": "Pembangkit Listrik Tenaga Nuklir (PLTN)",
+      "category": "Jaringan Energi",
+      "tags": "rgb,yellow,character,ESRI Default Marker",
+      "type": "marker",
+      "color": "#ffff00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/pembangkit-listrik-tenaga-nuklir-pltn.png",
+      "slug": "pembangkit-listrik-tenaga-nuklir-pltn"
+    },
+    {
+      "name": "Pembangkit Listrik Tenaga Panas Bumi (PLTP)",
+      "category": "Jaringan Energi",
+      "tags": "rgb,red,character,ESRI Default Marker",
+      "type": "marker",
+      "color": "#ff0000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/pembangkit-listrik-tenaga-panas-bumi-pltp.png",
+      "slug": "pembangkit-listrik-tenaga-panas-bumi-pltp"
+    },
+    {
+      "name": "Pembangkit Listrik Tenaga Surya (PLTS)",
+      "category": "Jaringan Energi",
+      "tags": "rgb,orange,character,ESRI Default Marker",
+      "type": "marker",
+      "color": "#ffaa00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/pembangkit-listrik-tenaga-surya-plts.png",
+      "slug": "pembangkit-listrik-tenaga-surya-plts"
+    },
+    {
+      "name": "Pembangkit Listrik Tenaga Uap (PLTU)",
+      "category": "Jaringan Energi",
+      "tags": "rgb,blue,character,ESRI Default Marker",
+      "type": "marker",
+      "color": "#00b4fa",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/pembangkit-listrik-tenaga-uap-pltu.png",
+      "slug": "pembangkit-listrik-tenaga-uap-pltu"
+    },
+    {
+      "name": "Pintu Air",
+      "category": "Jaringan Sumber Daya Air",
+      "tags": "multilayer,rgb,blue,character,ESRI US Forestry 1,white,ESRI Default Marker",
+      "type": "marker",
+      "color": "#005ae6",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/pintu-air.png",
+      "slug": "pintu-air"
+    },
+    {
+      "name": "Prasarana Irigasi",
+      "category": "Jaringan Sumber Daya Air",
+      "tags": "multilayer,rgb,white,character,blue,ESRI US Forestry 1,ESRI ERS Infrastructures S1",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI ERS Infrastructures S1",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/prasarana-irigasi.png",
+      "slug": "prasarana-irigasi"
+    },
+    {
+      "name": "Prasarana dan Sarana Pelengkap",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,character,ESRI US Forestry 1,orange,ESRI Business",
+      "type": "marker",
+      "color": "#be8200",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Business",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/prasarana-dan-sarana-pelengkap.png",
+      "slug": "prasarana-dan-sarana-pelengkap"
+    },
+    {
+      "name": "Pusat Kegiatan Lokal (PKL)",
+      "category": "Sistem Pusat Permukiman",
+      "tags": "simple,square,rgb,yellow",
+      "type": "marker",
+      "color": "#ffff00",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/pusat-kegiatan-lokal-pkl.png",
+      "slug": "pusat-kegiatan-lokal-pkl"
+    },
+    {
+      "name": "Pusat Kegiatan Nasional (PKN)",
+      "category": "Sistem Pusat Permukiman",
+      "tags": "rgb,red,simple,square",
+      "type": "marker",
+      "color": "#ff0000",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/pusat-kegiatan-nasional-pkn.png",
+      "slug": "pusat-kegiatan-nasional-pkn"
+    },
+    {
+      "name": "Pusat Kegiatan Strategis Nasional (PKSN)",
+      "category": "Sistem Pusat Permukiman",
+      "tags": "simple,square,rgb,white",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/pusat-kegiatan-strategis-nasional-pksn.png",
+      "slug": "pusat-kegiatan-strategis-nasional-pksn"
+    },
+    {
+      "name": "Pusat Kegiatan Wilayah (PKW)",
+      "category": "Sistem Pusat Permukiman",
+      "tags": "simple,square,hsv,orange",
+      "type": "marker",
+      "color": "#ed7b2f",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/pusat-kegiatan-wilayah-pkw.png",
+      "slug": "pusat-kegiatan-wilayah-pkw"
+    },
+    {
+      "name": "Pusat Lingkungan Kecamatan",
+      "category": "Sistem Pusat Permukiman",
+      "tags": "multilayer,rgb,black,character,Arial,ESRI Default Marker,yellow",
+      "type": "marker",
+      "color": "#ffff00",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/pusat-lingkungan-kecamatan.png",
+      "slug": "pusat-lingkungan-kecamatan"
+    },
+    {
+      "name": "Pusat Lingkungan Kelurahan/Desa",
+      "category": "Sistem Pusat Permukiman",
+      "tags": "multilayer,rgb,black,character,Arial,ESRI Default Marker,yellow",
+      "type": "marker",
+      "color": "#ffff00",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/pusat-lingkungan-kelurahan-desa.png",
+      "slug": "pusat-lingkungan-kelurahan-desa"
+    },
+    {
+      "name": "Pusat Otomasi Sambungan Telepon",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,character,ESRI Telecom,green,ESRI US Forestry 1",
+      "type": "marker",
+      "color": "#3caa00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Telecom",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/pusat-otomasi-sambungan-telepon.png",
+      "slug": "pusat-otomasi-sambungan-telepon"
+    },
+    {
+      "name": "Pusat Pelayanan Kawasan",
+      "category": "Sistem Pusat Permukiman",
+      "tags": "rgb,orange,character,ESRI Default Marker,multilayer,black",
+      "type": "marker",
+      "color": "#ff5500",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/pusat-pelayanan-kawasan.png",
+      "slug": "pusat-pelayanan-kawasan"
+    },
+    {
+      "name": "Pusat Pelayanan Kota",
+      "category": "Sistem Pusat Permukiman",
+      "tags": "multilayer,rgb,black,character,ESRI Default Marker,orange",
+      "type": "marker",
+      "color": "#ff5500",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/pusat-pelayanan-kota.png",
+      "slug": "pusat-pelayanan-kota"
+    },
+    {
+      "name": "Pusat Pelayanan Kota/Kawasan Perkotaan",
+      "category": "Sistem Pusat Permukiman",
+      "tags": "multilayer,rgb,black,character,ESRI Default Marker,orange",
+      "type": "marker",
+      "color": "#ff5500",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/pusat-pelayanan-kota-kawasan-perkotaan.png",
+      "slug": "pusat-pelayanan-kota-kawasan-perkotaan"
+    },
+    {
+      "name": "Pusat Pelayanan Lingkungan",
+      "category": "Sistem Pusat Permukiman",
+      "tags": "rgb,orange,character,ESRI Default Marker,multilayer,black",
+      "type": "marker",
+      "color": "#ffbe00",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/pusat-pelayanan-lingkungan.png",
+      "slug": "pusat-pelayanan-lingkungan"
+    },
+    {
+      "name": "Pusat Rukun Warga",
+      "category": "Sistem Pusat Permukiman",
+      "tags": "multilayer,rgb,black,character,Arial,ESRI Default Marker,yellow",
+      "type": "marker",
+      "color": "#ffff00",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/pusat-rukun-warga.png",
+      "slug": "pusat-rukun-warga"
+    },
+    {
+      "name": "Rumah Kabel",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,character,ESRI Business,green,ESRI US Forestry 1",
+      "type": "marker",
+      "color": "#3caa00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Business",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/rumah-kabel.png",
+      "slug": "rumah-kabel"
+    },
+    {
+      "name": "Sambungan Langsung",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue,character,ESRI US Forestry 1,ESRI SDS 2.00 2",
+      "type": "marker",
+      "color": "#005ce6",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI SDS 2.00 2",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/sambungan-langsung.png",
+      "slug": "sambungan-langsung"
+    },
+    {
+      "name": "Sarana Pengolahan Hasil Pembakaran",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,orange,character,ESRI ArcPad,white,ESRI Default Marker",
+      "type": "marker",
+      "color": "#ffaa00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI ArcPad",
+        "ESRI Default Marker"
+      ],
+      "icon": "/icons/esri/sarana-pengolahan-hasil-pembakaran.png",
+      "slug": "sarana-pengolahan-hasil-pembakaran"
+    },
+    {
+      "name": "Sarana Penyimpanan Bahan Bakar",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,orange,character,ESRI Hazardous Materials,white,ESRI Enviro Hazard Incident,ESRI US Forestry 1,ESRI Default Marker",
+      "type": "marker",
+      "color": "#ffaa00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI Enviro Hazard Incident",
+        "ESRI Hazardous Materials",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/sarana-penyimpanan-bahan-bakar.png",
+      "slug": "sarana-penyimpanan-bahan-bakar"
+    },
+    {
+      "name": "Sentral Telepon Otomat (STO)",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,white,character,ESRI US Forestry 1,green,ESRI Default Marker",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/sentral-telepon-otomat-sto.png",
+      "slug": "sentral-telepon-otomat-sto"
+    },
+    {
+      "name": "Sistem Jaringan Persampahan",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,character,ESRI Enviro Hazard Analysis,orange,ESRI Hazardous Materials,white",
+      "type": "marker",
+      "color": "#aa6e00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Enviro Hazard Analysis",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/sistem-jaringan-persampahan.png",
+      "slug": "sistem-jaringan-persampahan"
+    },
+    {
+      "name": "Sistem Pengelolaan Limbah Bahan Berbahaya dan Beracun (B3)",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,white,character,ESRI Default Marker,Arial Black,orange",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/sistem-pengelolaan-limbah-bahan-berbahaya-dan-beracun-b3.png",
+      "slug": "sistem-pengelolaan-limbah-bahan-berbahaya-dan-beracun-b3"
+    },
+    {
+      "name": "Stasiun Barang",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,white,character,ESRI Default Marker,orange,ESRI Public1",
+      "type": "marker",
+      "color": "#ff9600",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI Public1"
+      ],
+      "icon": "/icons/esri/stasiun-barang.png",
+      "slug": "stasiun-barang"
+    },
+    {
+      "name": "Stasiun Bumi",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,character,ESRI Telecom,green,ESRI US Forestry 1",
+      "type": "marker",
+      "color": "#3caa00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Telecom",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/stasiun-bumi.png",
+      "slug": "stasiun-bumi"
+    },
+    {
+      "name": "Stasiun Kereta Api",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,character,ESRI Public1,white,black",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Public1"
+      ],
+      "icon": "/icons/esri/stasiun-kereta-api.png",
+      "slug": "stasiun-kereta-api"
+    },
+    {
+      "name": "Stasiun Operasi",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,white,character,ESRI Default Marker,red,ESRI Public1",
+      "type": "marker",
+      "color": "#f53200",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI Public1"
+      ],
+      "icon": "/icons/esri/stasiun-operasi.png",
+      "slug": "stasiun-operasi"
+    },
+    {
+      "name": "Stasiun Penumpang",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,character,ESRI Public1,white,blue",
+      "type": "marker",
+      "color": "#0070ff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Public1"
+      ],
+      "icon": "/icons/esri/stasiun-penumpang.png",
+      "slug": "stasiun-penumpang"
+    },
+    {
+      "name": "Stasiun Penumpang Besar",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,black,character,ESRI Public1,white",
+      "type": "marker",
+      "color": "#000000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Public1"
+      ],
+      "icon": "/icons/esri/stasiun-penumpang-besar.png",
+      "slug": "stasiun-penumpang-besar"
+    },
+    {
+      "name": "Stasiun Penumpang Kecil",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,gray,character,ESRI Default Marker,ESRI US Forestry 1,white",
+      "type": "marker",
+      "color": "#686868",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/stasiun-penumpang-kecil.png",
+      "slug": "stasiun-penumpang-kecil"
+    },
+    {
+      "name": "Stasiun Penumpang Sedang",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,gray,character,ESRI Public1,white",
+      "type": "marker",
+      "color": "#686868",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Public1"
+      ],
+      "icon": "/icons/esri/stasiun-penumpang-sedang.png",
+      "slug": "stasiun-penumpang-sedang"
+    },
+    {
+      "name": "Stasiun Peralihan Antara (SPA)",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,character,Arial Narrow,ESRI Hazardous Materials,orange,white",
+      "type": "marker",
+      "color": "#aa6e00",
+      "is_font_based": true,
+      "fonts": [
+        "Arial Narrow",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/stasiun-peralihan-antara-spa.png",
+      "slug": "stasiun-peralihan-antara-spa"
+    },
+    {
+      "name": "Stasiun Transmisi (Sistem Televisi)",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,white,character,ESRI US Forestry 1,green,ESRI Default Marker",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Default Marker",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/stasiun-transmisi-sistem-televisi.png",
+      "slug": "stasiun-transmisi-sistem-televisi"
+    },
+    {
+      "name": "Sub Pusat Pelayanan Kota",
+      "category": "Sistem Pusat Permukiman",
+      "tags": "multilayer,rgb,black,character,ESRI Default Marker,orange",
+      "type": "marker",
+      "color": "#ffbe00",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/sub-pusat-pelayanan-kota.png",
+      "slug": "sub-pusat-pelayanan-kota"
+    },
+    {
+      "name": "Sub Pusat Pelayanan Kota/Kawasan Perkotaan",
+      "category": "Sistem Pusat Permukiman",
+      "tags": "multilayer,rgb,black,character,ESRI Default Marker,orange",
+      "type": "marker",
+      "color": "#ffbe00",
+      "is_font_based": false,
+      "fonts": [],
+      "icon": "/icons/esri/sub-pusat-pelayanan-kota-kawasan-perkotaan.png",
+      "slug": "sub-pusat-pelayanan-kota-kawasan-perkotaan"
+    },
+    {
+      "name": "Sub-sistem Pengolahan Lumpur Tinja",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,orange,character,ESRI Commodities,ESRI Default Marker,white",
+      "type": "marker",
+      "color": "#824600",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Commodities"
+      ],
+      "icon": "/icons/esri/sub-sistem-pengolahan-lumpur-tinja.png",
+      "slug": "sub-sistem-pengolahan-lumpur-tinja"
+    },
+    {
+      "name": "Sub-sistem Pengolahan Setempat",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,white,character,ESRI Commodities,orange,ESRI Default Marker",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Commodities"
+      ],
+      "icon": "/icons/esri/sub-sistem-pengolahan-setempat.png",
+      "slug": "sub-sistem-pengolahan-setempat"
+    },
+    {
+      "name": "Sumur Dangkal",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,white,character,ESRI Enviro Hazard Analysis,blue,ESRI Enviro Hazard Sites",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Enviro Hazard Analysis",
+        "ESRI Enviro Hazard Sites"
+      ],
+      "icon": "/icons/esri/sumur-dangkal.png",
+      "slug": "sumur-dangkal"
+    },
+    {
+      "name": "Sumur Pompa",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,white,character,ESRI Enviro Hazard Analysis,blue,ESRI Enviro Hazard Sites",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Enviro Hazard Analysis",
+        "ESRI Enviro Hazard Sites"
+      ],
+      "icon": "/icons/esri/sumur-pompa.png",
+      "slug": "sumur-pompa"
+    },
+    {
+      "name": "Tempat Evakuasi Akhir_1",
+      "category": "",
+      "tags": "rgb,pink,character,ESRI US Forestry 1",
+      "type": "marker",
+      "color": "#ff00c5",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/tempat-evakuasi-akhir-1.png",
+      "slug": "tempat-evakuasi-akhir-1"
+    },
+    {
+      "name": "Tempat Evakuasi Bencana_1",
+      "category": "",
+      "tags": "rgb,pink,character,ESRI Crime Analysis",
+      "type": "marker",
+      "color": "#ff00c5",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Crime Analysis"
+      ],
+      "icon": "/icons/esri/tempat-evakuasi-bencana-1.png",
+      "slug": "tempat-evakuasi-bencana-1"
+    },
+    {
+      "name": "Tempat Evakuasi Sementara_1",
+      "category": "",
+      "tags": "multilayer,rgb,pink,character,ESRI Hazardous Materials,white,ESRI US Forestry 1",
+      "type": "marker",
+      "color": "#ff00c5",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Hazardous Materials",
+        "ESRI US Forestry 1"
+      ],
+      "icon": "/icons/esri/tempat-evakuasi-sementara-1.png",
+      "slug": "tempat-evakuasi-sementara-1"
+    },
+    {
+      "name": "Tempat Pemrosesan Akhir (TPA)",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,character,Arial Narrow,ESRI Hazardous Materials,orange,white",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "Arial Narrow",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/tempat-pemrosesan-akhir-tpa.png",
+      "slug": "tempat-pemrosesan-akhir-tpa"
+    },
+    {
+      "name": "Tempat Penampungan Sementara (TPS)",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,character,Arial Narrow,ESRI Hazardous Materials,orange,white",
+      "type": "marker",
+      "color": "#aa6e00",
+      "is_font_based": true,
+      "fonts": [
+        "Arial Narrow",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/tempat-penampungan-sementara-tps.png",
+      "slug": "tempat-penampungan-sementara-tps"
+    },
+    {
+      "name": "Tempat Pengelolaan Sampah Reuse, Reduce, Recycle (TPS3R)",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,character,ESRI Hazardous Materials,orange,green,ESRI Commodities,white",
+      "type": "marker",
+      "color": "#3caa00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Commodities",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/tempat-pengelolaan-sampah-reuse-reduce-recycle-tps3r.png",
+      "slug": "tempat-pengelolaan-sampah-reuse-reduce-recycle-tps3r"
+    },
+    {
+      "name": "Tempat Pengolahan Sampah Terpadu (TPST)",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,character,Arial Narrow,ESRI Hazardous Materials,white,red",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "Arial Narrow",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/tempat-pengolahan-sampah-terpadu-tpst.png",
+      "slug": "tempat-pengolahan-sampah-terpadu-tpst"
+    },
+    {
+      "name": "Terminal Air",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,character,ESRI Enviro Hazard Analysis,white",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Enviro Hazard Analysis"
+      ],
+      "icon": "/icons/esri/terminal-air.png",
+      "slug": "terminal-air"
+    },
+    {
+      "name": "Terminal Barang",
+      "category": "Jaringan Transportasi",
+      "tags": "rgb,orange,character,ESRI Transportation & Civic",
+      "type": "marker",
+      "color": "#e69800",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Transportation & Civic"
+      ],
+      "icon": "/icons/esri/terminal-barang.png",
+      "slug": "terminal-barang"
+    },
+    {
+      "name": "Terminal Khusus",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,black,character,Arial,ESRI Environmental & Icons,ESRI Default Marker,white",
+      "type": "marker",
+      "color": "#000000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Environmental & Icons"
+      ],
+      "icon": "/icons/esri/terminal-khusus.png",
+      "slug": "terminal-khusus"
+    },
+    {
+      "name": "Terminal Penumpang Tipe A",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,character,Arial,ESRI Transportation & Civic,blue",
+      "type": "marker",
+      "color": "#6991fd",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Transportation & Civic"
+      ],
+      "icon": "/icons/esri/terminal-penumpang-tipe-a.png",
+      "slug": "terminal-penumpang-tipe-a"
+    },
+    {
+      "name": "Terminal Penumpang Tipe B",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,character,Arial,ESRI Transportation & Civic,red",
+      "type": "marker",
+      "color": "#ff0000",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Transportation & Civic"
+      ],
+      "icon": "/icons/esri/terminal-penumpang-tipe-b.png",
+      "slug": "terminal-penumpang-tipe-b"
+    },
+    {
+      "name": "Terminal Penumpang Tipe C",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,blue,character,Arial,ESRI Transportation & Civic",
+      "type": "marker",
+      "color": "#8e67fd",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Transportation & Civic"
+      ],
+      "icon": "/icons/esri/terminal-penumpang-tipe-c.png",
+      "slug": "terminal-penumpang-tipe-c"
+    },
+    {
+      "name": "Terminal Umum",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,orange,character,ESRI Environmental & Icons,ESRI Default Marker,white,Arial",
+      "type": "marker",
+      "color": "#734c00",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Environmental & Icons"
+      ],
+      "icon": "/icons/esri/terminal-umum.png",
+      "slug": "terminal-umum"
+    },
+    {
+      "name": "Titik Kumpul",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "rgb,pink,character,ESRI Cartography",
+      "type": "marker",
+      "color": "#ff00c5",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Cartography"
+      ],
+      "icon": "/icons/esri/titik-kumpul.png",
+      "slug": "titik-kumpul"
+    },
+    {
+      "name": "Unit Air Baku",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue,character,ESRI Climate & Precipitation,white",
+      "type": "marker",
+      "color": "#00a9e6",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Climate & Precipitation"
+      ],
+      "icon": "/icons/esri/unit-air-baku.png",
+      "slug": "unit-air-baku"
+    },
+    {
+      "name": "Unit Pelayanan",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,white,character,ESRI Enviro Hazard Incident,blue,ESRI Hazardous Materials",
+      "type": "marker",
+      "color": "#ffffff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Enviro Hazard Incident",
+        "ESRI Hazardous Materials"
+      ],
+      "icon": "/icons/esri/unit-pelayanan.png",
+      "slug": "unit-pelayanan"
+    },
+    {
+      "name": "Unit Produksi",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue,character,ESRI Enviro Hazard Incident",
+      "type": "marker",
+      "color": "#0037ff",
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Enviro Hazard Incident"
+      ],
+      "icon": "/icons/esri/unit-produksi.png",
+      "slug": "unit-produksi"
+    }
+  ],
+  "lines": [
+    {
+      "name": "Alur-Pelayaran Kelas I",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer",
+      "type": "line",
+      "color": "#ff9000",
+      "weight": 1.2,
+      "dash": [],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Alur-Pelayaran Kelas II",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer",
+      "type": "line",
+      "color": "#ff9000",
+      "weight": 1.2,
+      "dash": [],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Alur-Pelayaran Kelas III",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer",
+      "type": "line",
+      "color": "#ff9000",
+      "weight": 1.2,
+      "dash": [],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Alur-Pelayaran Khusus",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#ce673b",
+      "weight": 2.0,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Alur-Pelayaran Masuk Pelabuhan",
+      "category": "Jaringan Transportasi ",
+      "tags": "rgb,blue,cartographic",
+      "type": "line",
+      "color": "#00befa",
+      "weight": 1.5,
+      "dash": [
+        "8",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Alur-Pelayaran Sungai dan Alur-Pelayaran Danau",
+      "category": "Jaringan Transportasi ",
+      "tags": "rgb,cartographic,orange",
+      "type": "line",
+      "color": "#ff8c00",
+      "weight": 1.5,
+      "dash": [
+        "15",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Alur-Pelayaran Umum dan Perlintasan",
+      "category": "Jaringan Transportasi",
+      "tags": "rgb,blue,cartographic",
+      "type": "line",
+      "color": "#005ce6",
+      "weight": 1.5,
+      "dash": [
+        "15",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Garis Pantai Rencana",
+      "category": "Jaringan Transportasi",
+      "tags": "rgb,multilayer,white",
+      "type": "line",
+      "color": "#ffffff",
+      "weight": 5.0,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalan Arteri Primer",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#000000",
+      "weight": 4.0,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalan Arteri Sekunder",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#000000",
+      "weight": 2.8,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalan Khusus",
+      "category": "Jaringan Transportasi",
+      "tags": "rgb,gray,cartographic",
+      "type": "line",
+      "color": "#4e4e4e",
+      "weight": 0.5,
+      "dash": [
+        "5",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalan Kolektor Primer",
+      "category": "Jaringan Transportasi ",
+      "tags": "rgb,orange,cartographic",
+      "type": "line",
+      "color": "#ff8c00",
+      "weight": 3.0,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalan Kolektor Sekunder",
+      "category": "Jaringan Transportasi ",
+      "tags": "rgb,orange,cartographic",
+      "type": "line",
+      "color": "#ffc800",
+      "weight": 1.8,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalan Lingkungan Primer",
+      "category": "Jaringan Transportasi ",
+      "tags": "rgb,gray,cartographic",
+      "type": "line",
+      "color": "#828282",
+      "weight": 1.25,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalan Lingkungan Sekunder",
+      "category": "Jaringan Transportasi ",
+      "tags": "rgb,gray,cartographic",
+      "type": "line",
+      "color": "#9c9c9c",
+      "weight": 0.8,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalan Lokal Primer",
+      "category": "Jaringan Transportasi ",
+      "tags": "rgb,purple,cartographic",
+      "type": "line",
+      "color": "#9b5aff",
+      "weight": 1.7,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalan Lokal Sekunder",
+      "category": "Jaringan Transportasi ",
+      "tags": "rgb,blue,cartographic",
+      "type": "line",
+      "color": "#b2b2ff",
+      "weight": 1.5,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalan Masuk dan Keluar Parkir",
+      "category": "Jaringan Transportasi",
+      "tags": "rgb,orange,cartographic",
+      "type": "line",
+      "color": "#f5a27a",
+      "weight": 1.8,
+      "dash": [
+        "12",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalan Masuk dan Keluar Terminal Barang dan Penumpang",
+      "category": "Jaringan Transportasi",
+      "tags": "rgb,purple,cartographic",
+      "type": "line",
+      "color": "#aa00e6",
+      "weight": 1.8,
+      "dash": [
+        "12",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalan Menuju Moda Transportasi Umum",
+      "category": "Jaringan Transportasi",
+      "tags": "rgb,pink,cartographic",
+      "type": "line",
+      "color": "#ff00be",
+      "weight": 1.8,
+      "dash": [
+        "12",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalan Tol",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,red",
+      "type": "line",
+      "color": "#000000",
+      "weight": 3.0,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalur Evakuasi Bencana",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "cmyk,purple,pink,cartographic",
+      "type": "line",
+      "color": "#ff00ff",
+      "weight": 2.0,
+      "dash": [
+        "15",
+        "5"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalur Kereta Rel Listrik",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#ff9600",
+      "weight": 0.8,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalur LRT",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,green",
+      "type": "line",
+      "color": "#55ff00",
+      "weight": 0.8,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalur MRT",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,pink",
+      "type": "line",
+      "color": "#ff00be",
+      "weight": 0.8,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalur Monorel",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,red",
+      "type": "line",
+      "color": "#ff0000",
+      "weight": 0.8,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalur Pendaratan dan Penerbangan di Laut",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer",
+      "type": "line",
+      "color": "#73ffdf",
+      "weight": 1.0,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jalur Sepeda",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "cmyk,green,cartographic",
+      "type": "line",
+      "color": "#33b200",
+      "weight": 1.8,
+      "dash": [
+        "12",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Air Baku",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue",
+      "type": "line",
+      "color": "#004da8",
+      "weight": 1.4,
+      "dash": [
+        "7",
+        "3"
+      ],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Jaringan Distribusi Pembagi",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue",
+      "type": "line",
+      "color": "#005ce6",
+      "weight": 1.4,
+      "dash": [
+        "7",
+        "3"
+      ],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Jaringan Distribusi Tenaga Listrik",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#ffd21e",
+      "weight": 2.0,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Drainase Lokal",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "rgb,cartographic,marker,green",
+      "type": "line",
+      "color": null,
+      "weight": null,
+      "dash": [],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Jaringan Drainase Primer",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "blue,cartographic,marker,rgb",
+      "type": "line",
+      "color": null,
+      "weight": null,
+      "dash": [],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Jaringan Drainase Sekunder",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "rgb,cartographic,marker,red",
+      "type": "line",
+      "color": null,
+      "weight": null,
+      "dash": [],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Jaringan Drainase Tersier",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "rgb,cartographic,marker,purple",
+      "type": "line",
+      "color": null,
+      "weight": null,
+      "dash": [],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Jaringan Irigasi Air Tanah",
+      "category": "Jaringan Sumber Daya Air",
+      "tags": "multilayer,rgb,blue",
+      "type": "line",
+      "color": "#00a884",
+      "weight": 1.0,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Irigasi Primer",
+      "category": "Jaringan Sumber Daya Air",
+      "tags": "multilayer,rgb,blue",
+      "type": "line",
+      "color": "#004ca8",
+      "weight": 1.4,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Irigasi Sekunder",
+      "category": "Jaringan Sumber Daya Air",
+      "tags": "multilayer,rgb,red",
+      "type": "line",
+      "color": "#ff0000",
+      "weight": 1.2,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Irigasi Tersier",
+      "category": "Jaringan Sumber Daya Air",
+      "tags": "multilayer,rgb,purple",
+      "type": "line",
+      "color": "#a900e6",
+      "weight": 1.0,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Jalur Kereta Api",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,black",
+      "type": "line",
+      "color": "#000000",
+      "weight": 0.8,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Jalur Kereta Api Antarkota",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,black",
+      "type": "line",
+      "color": "#000000",
+      "weight": 0.8,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Jalur Kereta Api Khusus",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,black",
+      "type": "line",
+      "color": "#000000",
+      "weight": 0.8,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Jalur Kereta Api Perkotaan",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,black",
+      "type": "line",
+      "color": "#000000",
+      "weight": 0.8,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Minyak dan Gas Bumi",
+      "category": "Jaringan Energi",
+      "tags": "multilayer",
+      "type": "line",
+      "color": "#ff7f7f",
+      "weight": 2.0,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Pejalan Kaki",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "rgb,cartographic,black",
+      "type": "line",
+      "color": "#000000",
+      "weight": 1.5,
+      "dash": [
+        "4",
+        "2"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Pengendalian Banjir",
+      "category": "Jaringan Sumber Daya Air",
+      "tags": "multilayer,rgb,blue",
+      "type": "line",
+      "color": "#004da8",
+      "weight": 1.0,
+      "dash": [],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Hazardous Materials"
+      ]
+    },
+    {
+      "name": "Jaringan Pipa/Kabel Bawah Laut Penyaluran Tenaga Listrik",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#824600",
+      "weight": 4.0,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Produksi",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue",
+      "type": "line",
+      "color": "#00a9e6",
+      "weight": 1.4,
+      "dash": [
+        "7",
+        "3"
+      ],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Jaringan Serat Optik",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,green",
+      "type": "line",
+      "color": "#3caa00",
+      "weight": 1.4,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Sistem Pengelolaan Air Limbah (SPAL)",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,red",
+      "type": "line",
+      "color": "#894444",
+      "weight": 1.0,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Sistem Pengelolaan Air Limbah Domestik",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,gray",
+      "type": "line",
+      "color": "#9c9c9c",
+      "weight": 1.0,
+      "dash": [],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Jaringan Sistem Pengelolaan Air Limbah Non Domestik",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#a87000",
+      "weight": 1.0,
+      "dash": [],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Jaringan Sistem Penyediaan Air Minum (SPAM)",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue",
+      "type": "line",
+      "color": "#004da8",
+      "weight": 1.0,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Tetap",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,green",
+      "type": "line",
+      "color": "#3caa00",
+      "weight": 1.4,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan Transmisi Air Baku",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue",
+      "type": "line",
+      "color": "#004da8",
+      "weight": 1.4,
+      "dash": [
+        "7",
+        "3"
+      ],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Jaringan Transmisi Air Minum",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue",
+      "type": "line",
+      "color": "#00a9e6",
+      "weight": 1.4,
+      "dash": [
+        "7",
+        "3"
+      ],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Jaringan Transmisi Tenaga Listrik Antarsistem",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#ff9600",
+      "weight": 4.0,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan yang Menyalurkan Gas Bumi dari Fasilitas Produksi-Kilang Pengolahan",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,red",
+      "type": "line",
+      "color": "#ff7f7f",
+      "weight": 1.5,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan yang Menyalurkan Gas Bumi dari Fasilitas Produksi-Tempat Penyimpanan",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,red",
+      "type": "line",
+      "color": "#ff7f7f",
+      "weight": 1.5,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan yang Menyalurkan Gas Bumi dari Kilang Pengolahan-Konsumen",
+      "category": "Jaringan Energi ",
+      "tags": "multilayer,rgb,red",
+      "type": "line",
+      "color": "#ff7f7f",
+      "weight": 1.7,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan yang Menyalurkan Minyak Bumi dari Fasilitas Produksi-Kilang Pengolahan",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,red",
+      "type": "line",
+      "color": "#ff7f7f",
+      "weight": 1.5,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan yang Menyalurkan Minyak Bumi dari Fasilitas Produksi-Tempat Penyimpanan",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,red",
+      "type": "line",
+      "color": "#ff7f7f",
+      "weight": 1.5,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan yang Menyalurkan Minyak dan Gas Bumi dari Fasilitas Produksi-Kilang Pengolahan",
+      "category": "Jaringan Energi ",
+      "tags": "multilayer,rgb,red",
+      "type": "line",
+      "color": "#ff7f7f",
+      "weight": 1.7,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Jaringan yang Menyalurkan Minyak dan Gas Bumi dari Fasilitas Produksi-Tempat Penyimpanan",
+      "category": "Jaringan Energi ",
+      "tags": "multilayer,rgb,red",
+      "type": "line",
+      "color": "#ff7f7f",
+      "weight": 1.7,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Kabel Bawah Tanah",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#824600",
+      "weight": 2.0,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Lintas Penyeberangan Antarkabupaten/Kota dalam Provinsi",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#ffc800",
+      "weight": 2.0,
+      "dash": [
+        "8",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Lintas Penyeberangan Antarnegara",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#ff5000",
+      "weight": 2.0,
+      "dash": [
+        "25",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Lintas Penyeberangan Antarprovinsi",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#ff7800",
+      "weight": 2.0,
+      "dash": [
+        "15",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Lintas Penyeberangan dalam Kabupaten",
+      "category": "Jaringan Transportasi ",
+      "tags": "multilayer,rgb,yellow",
+      "type": "line",
+      "color": "#ffff00",
+      "weight": 2.0,
+      "dash": [
+        "3",
+        "3"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Lintas Penyeberangan dalam Kota",
+      "category": "Jaringan Transportasi",
+      "tags": "multilayer,rgb,green",
+      "type": "line",
+      "color": "#aaff00",
+      "weight": 2.0,
+      "dash": [
+        "3",
+        "3"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Pengaman Pantai",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue",
+      "type": "line",
+      "color": "#005ae6",
+      "weight": 2.5,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Pipa Induk",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#824600",
+      "weight": 1.5,
+      "dash": [],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Pipa Non Tinja",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue",
+      "type": "line",
+      "color": "#824600",
+      "weight": 1.0,
+      "dash": [],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Pipa Persil",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,yellow",
+      "type": "line",
+      "color": "#824600",
+      "weight": 1.0,
+      "dash": [],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Pipa Retikulasi",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#be7800",
+      "weight": 1.0,
+      "dash": [],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Pipa Tinja",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#824600",
+      "weight": 1.0,
+      "dash": [],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Saluran Distribusi Lainnya",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,gray",
+      "type": "line",
+      "color": "#878787",
+      "weight": 2.0,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Saluran Kabel Tegangan Menengah (SKTM)",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#ffd21e",
+      "weight": 2.0,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Saluran Transmisi Lainnya",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,gray",
+      "type": "line",
+      "color": "#878787",
+      "weight": 4.0,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Saluran Udara Tegangan Ekstra Tinggi (SUTET)",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#ff9600",
+      "weight": 4.0,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Saluran Udara Tegangan Menengah (SUTM)",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#ffd21e",
+      "weight": 2.0,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Saluran Udara Tegangan Rendah (SUTR)",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#ffd21e",
+      "weight": 2.0,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Saluran Udara Tegangan Tinggi (SUTT)",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#ff9600",
+      "weight": 4.0,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Saluran Udara Tegangan Tinggi Arus Searah (SUTTAS)",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#ff9600",
+      "weight": 4.0,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Saluran Udara Tegangan Ultra Tinggi (SUTUT)",
+      "category": "Jaringan Energi",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#ff9600",
+      "weight": 4.0,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Sistem Jaringan Air Bersih",
+      "category": "Jaringan Sumber Daya Air",
+      "tags": "multilayer,rgb,blue",
+      "type": "line",
+      "color": "#004ca8",
+      "weight": 1.4,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Sistem Jaringan Irigasi",
+      "category": "Jaringan Sumber Daya Air",
+      "tags": "multilayer,rgb,blue",
+      "type": "line",
+      "color": "#004da8",
+      "weight": 1.8,
+      "dash": [],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Tanggul Penahan Longsor",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,orange",
+      "type": "line",
+      "color": "#824600",
+      "weight": 1.0,
+      "dash": [
+        "5",
+        "2",
+        "5",
+        "2"
+      ],
+      "is_font_based": false,
+      "fonts": []
+    },
+    {
+      "name": "Telepon Fixed Line",
+      "category": "Jaringan Telekomunikasi",
+      "tags": "multilayer,rgb,green",
+      "type": "line",
+      "color": "#3caa00",
+      "weight": 1.4,
+      "dash": [
+        "1e-06",
+        "6",
+        "14",
+        "4"
+      ],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    },
+    {
+      "name": "Unit Distribusi",
+      "category": "Jaringan Prasarana Lainnya",
+      "tags": "multilayer,rgb,blue",
+      "type": "line",
+      "color": "#005ce6",
+      "weight": 1.4,
+      "dash": [
+        "7",
+        "3"
+      ],
+      "is_font_based": true,
+      "fonts": [
+        "ESRI Dimensioning"
+      ]
+    }
+  ],
+  "fills": [
+    {
+      "name": "Badan Air",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#97dbf2",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Badan Jalan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,red",
+      "type": "fill",
+      "color": "#eb1e1e",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Cagar Alam",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#4646a5",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Cagar Alam Laut",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#5a5ac3",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Cagar Budaya",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,pink",
+      "type": "fill",
+      "color": "#ff37cd",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Campuran Intensitas Menengah/Sedang",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#f0731e",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Campuran Intensitas Tinggi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#f05500",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Daerah Perlindungan Adat Maritim",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue,green",
+      "type": "fill",
+      "color": "#1eb97d",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Daerah Perlindungan Budaya Maritim",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#37d27d",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Ekosistem Mangrove",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue,green",
+      "type": "fill",
+      "color": "#2d966e",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Fungsi dan Daya Dukung Lingkungan Hidup",
+      "category": "Kawasan Strategis",
+      "tags": "multilayer,rgb,green",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Holding Zone",
+      "category": "Ketentuan Tambahan",
+      "tags": "rgb,red,line",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Hortikultura",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#e6ff4b",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Hutan Adat",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#056928",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Hutan Lindung",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple",
+      "type": "fill",
+      "color": "#325f28",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Hutan Produksi Terbatas",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#4b9b37",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Hutan Produksi Tetap",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#69b437",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Hutan Produksi yang dapat Dikonversi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#9be137",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Imbuhan Air Tanah",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#cd8764",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Instalasi Pengolahan Air Limbah (IPAL)",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#ffe687",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Instalasi Pengolahan Air Minum (IPAM)",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#ffc869",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Jalur Hijau",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#0ff500",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Cagar Alam Geologi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,gray",
+      "type": "fill",
+      "color": "#6e876e",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Cagar Budaya",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,pink",
+      "type": "fill",
+      "color": "#ff37cd",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Campuran",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,red",
+      "type": "fill",
+      "color": "#d25537",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Ekosistem Mangrove",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue,green",
+      "type": "fill",
+      "color": "#2d966e",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Fasilitas Umum dan Fasilitas Sosial",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,purple,pink",
+      "type": "fill",
+      "color": "#5f005f",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Hortikultura",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#e6ff4b",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Hutan Adat",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#056928",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Hutan Lindung",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple",
+      "type": "fill",
+      "color": "#325f28",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Hutan Produksi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#009b37",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Hutan Produksi Terbatas",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#4b9b37",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Hutan Produksi Tetap",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#69b437",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Hutan Produksi yang dapat Dikonversi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#9be137",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan IPPKH/PPKH",
+      "category": "Ketentuan Tambahan",
+      "tags": "rgb,orange,multilayer",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Kawasan Imbuhan Air Tanah",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#cd8764",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Infrastruktur Perkotaan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#ebb455",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Keunikan Batuan dan Fosil",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,gray",
+      "type": "fill",
+      "color": "#968796",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Keunikan Bentang Alam",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple",
+      "type": "fill",
+      "color": "#b48796",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Keunikan Proses Geologi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,pink",
+      "type": "fill",
+      "color": "#d287b4",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Konservasi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,purple",
+      "type": "fill",
+      "color": "#783ccd",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Konservasi Maritim",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#05a07d",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Konservasi Perairan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#50f57d",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Konservasi Pesisir dan Pulau-Pulau Kecil",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#1496aa",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Konservasi di Wilayah Pesisir dan Pulau-Pulau Kecil",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#00827d",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Lindung Gambut",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,yellow",
+      "type": "fill",
+      "color": "#696900",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Lindung Geologi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,gray",
+      "type": "fill",
+      "color": "#788782",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Panas Bumi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,red",
+      "type": "fill",
+      "color": "#cd0000",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Pariwisata",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,purple,pink",
+      "type": "fill",
+      "color": "#ffa5ff",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Pelestarian Alam",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#785aff",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Pemanfaatan Air Laut selain Energi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,gray",
+      "type": "fill",
+      "color": "#555555",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Pembangkitan Tenaga Listrik",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#00ffcd",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Pembuangan Hasil Pengerukan di Laut",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#d7be9b",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Pencadangan Konservasi di Laut",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple",
+      "type": "fill",
+      "color": "#5a9696",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Perdagangan dan Jasa",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,red",
+      "type": "fill",
+      "color": "#ff4646",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Pergaraman",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#b49678",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Perikanan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#507dd2",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Perikanan Budi Daya",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#82b9d2",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Perikanan Tangkap",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#649bd2",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Perkantoran",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,gray",
+      "type": "fill",
+      "color": "#9b9b9b",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Perkebunan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,yellow",
+      "type": "fill",
+      "color": "#afaf37",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Perkebunan Rakyat",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#9bdc9b",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Perlindungan Setempat",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#05d7d7",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Permukiman",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#ff7d00",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Permukiman Perdesaan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#eb9b3c",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Permukiman Perkotaan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#f59b1e",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Pertahanan dan Keamanan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,purple",
+      "type": "fill",
+      "color": "#9b00ff",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Pertambangan Batubara",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple",
+      "type": "fill",
+      "color": "#7d91af",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Pertambangan Mineral Bukan Logam",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,gray",
+      "type": "fill",
+      "color": "#415573",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Pertambangan Mineral Logam",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple",
+      "type": "fill",
+      "color": "#2d415f",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Pertambangan Mineral Radioaktif",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple",
+      "type": "fill",
+      "color": "#192d4b",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Pertambangan Minyak dan Gas Bumi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#9bafcd",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Pertambangan dan Energi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#051937",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Pertanian",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,yellow",
+      "type": "fill",
+      "color": "#c8c83c",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Perumahan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#ffa000",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Peruntukan Industri",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,red",
+      "type": "fill",
+      "color": "#690000",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Peruntukan Pertambangan Batuan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple",
+      "type": "fill",
+      "color": "#5f7391",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Peternakan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#b9ebb9",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Ruang Terbuka Non Hijau",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#006969",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Suaka Alam",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#323287",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Taman Buru",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#4696ff",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Tanaman Pangan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#c8f546",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan Transportasi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,red,orange",
+      "type": "fill",
+      "color": "#d73700",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Kawasan yang Memberikan Perlindungan terhadap Kawasan Bawahannya",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,gray",
+      "type": "fill",
+      "color": "#234128",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Keunikan Batuan dan Fosil",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,gray",
+      "type": "fill",
+      "color": "#968796",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Keunikan Bentang Alam",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple",
+      "type": "fill",
+      "color": "#b48796",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Keunikan Proses Geologi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,pink",
+      "type": "fill",
+      "color": "#d287b4",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Lindung Gambut",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,yellow",
+      "type": "fill",
+      "color": "#696900",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Overlay - Area Perjanjian Kerja Sama Internasional",
+      "category": "Ketentuan Khusus",
+      "tags": "multilayer",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Bagan Pemisah Alur",
+      "category": "Ketentuan Khusus",
+      "tags": "multilayer",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Daerah Lingkungan Kepentingan Pelabuhan",
+      "category": "Ketentuan Khusus",
+      "tags": "multilayer",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Kawasan Ancangan Pendaratan dan Lepas Landas",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,blue,line",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Kawasan Berorientasi Transit",
+      "category": "Ketentuan Khusus",
+      "tags": "cmyk,gray,line",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Kawasan Cagar Budaya",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,purple,pink,multilayer",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Kawasan Karst",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,orange,line",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Kawasan Kemungkinan Bahaya Kecelakaan",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,red,line",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Kawasan Keselamatan Operasi Penerbangan",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,blue,line",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Kawasan Migrasi Satwa",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,green,multilayer",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Kawasan Perlindungan Ekosistem Laut",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,green,picture,bitmap",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "solid"
+    },
+    {
+      "name": "Overlay - Kawasan Pertahanan dan Keamanan",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,red,multilayer",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Kawasan Pertambangan Mineral dan Batubara",
+      "category": "Ketentuan Khusus",
+      "tags": "multilayer,rgb,pink",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Kawasan Pertanian Pangan Berkelanjutan",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,green,picture,bitmap",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "solid"
+    },
+    {
+      "name": "Overlay - Kawasan Rawan Bencana",
+      "category": "Ketentuan Khusus",
+      "tags": "line",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Kawasan Resapan Air",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,blue,line",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Kawasan di Bawah Permukaan Horizontal-Dalam",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,green,blue,line",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Kawasan di Bawah Permukaan Horizontal-Luar",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,green,line",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Kawasan di Bawah Permukaan Kerucut",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,purple,line",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Kawasan di Bawah Permukaan Transisi",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,orange,line",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Lahan Cadangan Pertanian Pangan Berkelanjutan",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,yellow,picture,bitmap",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "solid"
+    },
+    {
+      "name": "Overlay - Lahan Pertanian Pangan Berkelanjutan",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,green,picture,bitmap",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "solid"
+    },
+    {
+      "name": "Overlay - Pusat Penelitian",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,pink,multilayer",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Ruang Dalam Bumi",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,orange,multilayer",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Sempadan Ketenagalistrikan",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,gray,line",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Sempadan Mata Air",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,blue,line",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Sempadan Pantai",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,blue,line",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Sempadan Pipa/Kabel",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,yellow,multilayer",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Sempadan Situ, Danau, Embung, dan Waduk",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,line,green",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Sempadan Sungai",
+      "category": "Ketentuan Khusus",
+      "tags": "multilayer",
+      "type": "fill",
+      "color": "#f0f0f0",
+      "outline": "#686868",
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Tempat Evakuasi Akhir",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,pink,multilayer",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Overlay - Tempat Evakuasi Sementara",
+      "category": "Ketentuan Khusus",
+      "tags": "rgb,orange,multilayer",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Panas Bumi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,red",
+      "type": "fill",
+      "color": "#cd0000",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Pariwisata",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,purple,pink",
+      "type": "fill",
+      "color": "#ffa5ff",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Pemakaman",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#5aff00",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Pembangkitan Tenaga Listrik",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#00ffcd",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Pendayagunaan Sumber Daya Alam dan/atau Teknologi Tinggi",
+      "category": "Kawasan Strategis",
+      "tags": "multilayer,rgb,red",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Pengelolaan Persampahan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#d79b37",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Pengembangan Nuklir",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,red",
+      "type": "fill",
+      "color": "#87001e",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Perdagangan dan Jasa Skala Kota",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,red",
+      "type": "fill",
+      "color": "#ff6464",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Perdagangan dan Jasa Skala SWP",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,red",
+      "type": "fill",
+      "color": "#ffa5a5",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Perdagangan dan Jasa Skala WP",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,red",
+      "type": "fill",
+      "color": "#ff8282",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Pergaraman",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#b49678",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Pergudangan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,gray",
+      "type": "fill",
+      "color": "#373737",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Perikanan Budi Daya",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#82b9d2",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Perikanan Tangkap",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#649bd2",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Perkantoran",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,gray",
+      "type": "fill",
+      "color": "#9b9b9b",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Perkebunan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,yellow",
+      "type": "fill",
+      "color": "#afaf37",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Perkebunan Rakyat",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#9bdc9b",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Perlindungan Setempat",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#05d7d7",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Pertahanan dan Keamanan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,purple",
+      "type": "fill",
+      "color": "#9b00ff",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Pertambangan Batubara",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple",
+      "type": "fill",
+      "color": "#7d91af",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Pertambangan Mineral Bukan Logam",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,gray",
+      "type": "fill",
+      "color": "#415573",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Pertambangan Mineral Logam",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple",
+      "type": "fill",
+      "color": "#2d415f",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Pertambangan Mineral Radioaktif",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple",
+      "type": "fill",
+      "color": "#192d4b",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Pertambangan Minyak dan Gas Bumi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#9bafcd",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Pertumbuhan Ekonomi",
+      "category": "Kawasan Strategis",
+      "tags": "multilayer,rgb,pink",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Perumahan Kepadatan Rendah",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,yellow",
+      "type": "fill",
+      "color": "#fffa4b",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Perumahan Kepadatan Sangat Rendah",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,yellow",
+      "type": "fill",
+      "color": "#ffff9b",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Perumahan Kepadatan Sangat Tinggi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,orange",
+      "type": "fill",
+      "color": "#ffbe00",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Perumahan Kepadatan Sedang",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,yellow",
+      "type": "fill",
+      "color": "#fff005",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Perumahan Kepadatan Tinggi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,yellow",
+      "type": "fill",
+      "color": "#ffdc00",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Peruntukan Pertambangan Batuan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple",
+      "type": "fill",
+      "color": "#5f7391",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Peternakan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#b9ebb9",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Pos Lintas Batas Negara",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,purple",
+      "type": "fill",
+      "color": "#cd37ff",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Rimba Kota",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#37550a",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Ruang Terbuka Hijau",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#2d370a",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Ruang Terbuka Non Hijau",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#006969",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "SPU Skala Kecamatan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,purple,pink",
+      "type": "fill",
+      "color": "#9b329b",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "SPU Skala Kelurahan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,purple,pink",
+      "type": "fill",
+      "color": "#b94bb9",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "SPU Skala Kota",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,purple,pink",
+      "type": "fill",
+      "color": "#7d197d",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "SPU Skala RW",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,purple,pink",
+      "type": "fill",
+      "color": "#d764d7",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Sosial dan Budaya",
+      "category": "Kawasan Strategis",
+      "tags": "multilayer,rgb,purple",
+      "type": "fill",
+      "color": null,
+      "outline": null,
+      "pattern": "hatch"
+    },
+    {
+      "name": "Suaka Margasatwa",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#6e6ee1",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Suaka Margasatwa Laut",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#8282ff",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Suaka Pesisir",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#46b4be",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Suaka Pulau Kecil",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#78cdd2",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Taman Buru",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#4696ff",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Taman Hutan Raya",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#b9a5ff",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Taman Kecamatan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#468700",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Taman Kelurahan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#4ba500",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Taman Kota",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#416900",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Taman Nasional",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#9b87ff",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Taman Pesisir",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#a0e6dc",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Taman Pulau Kecil",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#c8f0e6",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Taman RT",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#55e100",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Taman RW",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#50c300",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Taman Wisata Alam",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,blue",
+      "type": "fill",
+      "color": "#d2beff",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Taman Wisata Alam Laut",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,purple",
+      "type": "fill",
+      "color": "#e6d2ff",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Tanaman Pangan",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,green",
+      "type": "fill",
+      "color": "#c8f546",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Tempat Evakuasi Akhir",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,red",
+      "type": "fill",
+      "color": "#ff3769",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Tempat Evakuasi Bencana",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,red",
+      "type": "fill",
+      "color": "#ff054b",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Tempat Evakuasi Sementara",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,red,pink",
+      "type": "fill",
+      "color": "#ff699b",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    },
+    {
+      "name": "Transportasi",
+      "category": "Pola Ruang",
+      "tags": "rgb,simple,red,orange",
+      "type": "fill",
+      "color": "#d73700",
+      "outline": "#f0f0f0",
+      "pattern": "solid"
+    }
+  ]
+}

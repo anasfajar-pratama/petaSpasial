@@ -36,10 +36,7 @@
                 </div>
                 @error('warna') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
             </div>
-            <div class="mb-4">
-                <label class="block text-sm font-medium text-gray-700 mb-1">Ikon Marker</label>
-                <input type="text" name="icon_marker" value="{{ old('icon_marker', $layer->icon_marker) }}" class="w-full border rounded-lg px-3 py-2">
-            </div>
+            @include('admin.layers._symbol_picker', ['simbMarker' => $simbMarker, 'simbLine' => $simbLine, 'simbFill' => $simbFill])
             <div class="mb-4">
                 <label class="block text-sm font-medium text-gray-700 mb-1">Deskripsi</label>
                 <textarea name="deskripsi" rows="3" class="w-full border rounded-lg px-3 py-2">{{ old('deskripsi', $layer->deskripsi) }}</textarea>

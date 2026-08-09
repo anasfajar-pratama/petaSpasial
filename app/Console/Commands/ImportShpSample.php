@@ -14,6 +14,7 @@ class ImportShpSample extends Command
     protected $description = 'Auto-import SHP data dari folder SHP/ ke database';
 
     private string $gdal;
+    private string $ogrinfo;
     private string $tempDir;
     private int $adminId = 1;
 
@@ -28,6 +29,8 @@ class ImportShpSample extends Command
     public function handle()
     {
         $this->gdal = config('gdal.bin');
+        $this->ogrinfo = config('gdal.path') ? config('gdal.path') . '/ogrinfo' : 'ogrinfo';
+        $this->configureGdalEnv();
         $this->tempDir = storage_path('app/temp/preimport-' . uniqid());
         mkdir($this->tempDir, 0755, true);
 
@@ -268,6 +271,36 @@ class ImportShpSample extends Command
         ];
     }
 
+    private function configureGdalEnv(): void
+    {
+        // Sistem secara global bisa mewarisi PROJ_LIB/GDAL_DATA dari instalasi lain
+        // (mis. PostgreSQL/PostGIS) yang versi proj.db-nya lebih tua dan membuat
+        // ogr2ogr gagal. Arahkan ulang ke data GDAL/PROJ milik bundle QGIS (GDAL_PATH).
+        $gdalPath = config('gdal.path');
+        if (!$gdalPath) return;
+
+        $root = dirname($gdalPath); // ...\QGIS 3.44.12
+
+        $projCandidates = [$root . '/share/proj', $root . '/apps/qgis-ltr/share/proj'];
+        foreach ($projCandidates as $dir) {
+            if (file_exists($dir . '/proj.db')) {
+                putenv('PROJ_LIB=' . $dir);
+                putenv('PROJ_DATA=' . $dir);
+                break;
+            }
+        }
+
+        $gdalDataCandidates = [];
+        foreach (glob($root . '/apps/*/share/gdal') as $dir) $gdalDataCandidates[] = $dir;
+        $gdalDataCandidates[] = $root . '/share/gdal';
+        foreach ($gdalDataCandidates as $dir) {
+            if (file_exists($dir . '/pcs.csv')) {
+                putenv('GDAL_DATA=' . $dir);
+                break;
+            }
+        }
+    }
+
     private function processDefinition(array $def): void
     {
         $this->info("Processing: {$def['name']}...");
@@ -434,7 +467,7 @@ class ImportShpSample extends Command
     {
         $cmd = sprintf(
             '"%s" -so -json "%s" 2>%s',
-            $this->gdal,
+            $this->ogrinfo,
             $shpPath,
             PHP_OS_FAMILY === 'Windows' ? 'nul' : '/dev/null'
         );

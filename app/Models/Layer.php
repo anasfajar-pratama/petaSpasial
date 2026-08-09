@@ -15,6 +15,7 @@ class Layer extends Model
         'kategori_id',
         'geom_type',
         'warna',
+        'style_json',
         'icon_marker',
         'deskripsi',
         'is_active',
@@ -30,6 +31,7 @@ class Layer extends Model
             'is_active' => 'boolean',
             'tampil' => 'boolean',
             'opacity' => 'decimal:2',
+            'style_json' => 'array',
         ];
     }
 
