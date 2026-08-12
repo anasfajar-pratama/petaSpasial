@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ \App\Models\Setting::getValue('site_name', config('app.name', 'petaSpasial')) }}</title>
+    @if (\App\Models\Setting::getValue('site_favicon'))
+        <link rel="icon" href="{{ asset('storage/' . \App\Models\Setting::getValue('site_favicon')) }}">
+    @endif
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans antialiased text-gray-800">
@@ -13,7 +16,11 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
                     <a href="{{ url('/') }}" class="flex items-center space-x-2">
-                        <x-application-logo class="w-8 h-8 fill-current text-blue-600" />
+                        @if (\App\Models\Setting::getValue('site_icon'))
+                            <img src="{{ asset('storage/' . \App\Models\Setting::getValue('site_icon')) }}" alt="Logo" class="w-8 h-8 object-cover">
+                        @else
+                            <x-application-logo class="w-8 h-8 fill-current text-blue-600" />
+                        @endif
                         <span class="text-lg font-bold text-gray-800">{{ \App\Models\Setting::getValue('site_name', config('app.name', 'petaSpasial')) }}</span>
                     </a>
                     <div class="hidden sm:flex items-center space-x-6">
@@ -41,7 +48,11 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                     <div class="flex items-center space-x-2">
-                        <x-application-logo class="w-6 h-6 fill-current text-gray-400" />
+                        @if (\App\Models\Setting::getValue('site_icon'))
+                            <img src="{{ asset('storage/' . \App\Models\Setting::getValue('site_icon')) }}" alt="Logo" class="w-6 h-6 object-cover">
+                        @else
+                            <x-application-logo class="w-6 h-6 fill-current text-gray-400" />
+                        @endif
                         <span class="text-sm font-medium text-gray-300">{{ \App\Models\Setting::getValue('site_name', config('app.name', 'petaSpasial')) }}</span>
                     </div>
                     <p class="text-sm">&copy; {{ date('Y') }} {{ \App\Models\Setting::getValue('site_name', config('app.name', 'petaSpasial')) }}. Hak cipta dilindungi.</p>
