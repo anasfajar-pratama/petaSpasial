@@ -63,6 +63,7 @@ Route::middleware(['auth', 'role:Administrator'])->prefix('admin')->name('admin.
     Route::patch('/layers/{layer}/toggle', [App\Http\Controllers\Admin\LayerController::class, 'toggle'])->name('layers.toggle');
     Route::get('/laporan', [App\Http\Controllers\Admin\LaporanController::class, 'index'])->name('laporan');
     Route::get('/simbol', [App\Http\Controllers\Admin\SimbolController::class, 'index'])->name('simbol');
+    Route::resource('/informasi', App\Http\Controllers\Admin\InformasiController::class)->except(['show']);
     Route::get('/laporan/pdf', [App\Http\Controllers\Admin\LaporanController::class, 'cetakPdf'])->name('laporan.pdf');
     Route::get('/laporan/excel', [App\Http\Controllers\Admin\LaporanController::class, 'cetakExcel'])->name('laporan.excel');
     Route::get('/pengaturan', [App\Http\Controllers\Admin\PengaturanController::class, 'index'])->name('pengaturan');

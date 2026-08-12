@@ -16,41 +16,17 @@
             </div>
             <hr class="mb-6">
             <div class="space-y-4">
-                <div class="border border-gray-200 rounded-lg p-5 flex items-start gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-bold">1</span>
-                    <div>
-                        <h3 class="text-base font-semibold text-gray-800">Navigasi Peta</h3>
-                        <p class="text-sm text-gray-600 mt-1">Gunakan scroll untuk zoom in/out, drag untuk menggeser peta. Klik pada objek untuk melihat informasi detail. Gunakan kotak pencarian untuk mencari lokasi atau alamat tertentu.</p>
+                @forelse ($items as $i => $item)
+                    <div class="border border-gray-200 rounded-lg p-5 flex items-start gap-4">
+                        <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-bold">{{ $i + 1 }}</span>
+                        <div>
+                            <h3 class="text-base font-semibold text-gray-800">{{ $item->judul }}</h3>
+                            <p class="text-sm text-gray-600 mt-1">{{ $item->isi }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="border border-gray-200 rounded-lg p-5 flex items-start gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-bold">2</span>
-                    <div>
-                        <h3 class="text-base font-semibold text-gray-800">Mengelola Layer</h3>
-                        <p class="text-sm text-gray-600 mt-1">Panel layer di sisi kanan peta menampilkan seluruh layer yang tersedia. Centang/centang layer untuk menampilkan atau menyembunyikannya. Urutan layer dapat diubah sesuai kebutuhan.</p>
-                    </div>
-                </div>
-                <div class="border border-gray-200 rounded-lg p-5 flex items-start gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-bold">3</span>
-                    <div>
-                        <h3 class="text-base font-semibold text-gray-800">Menggambar dan Digitasi</h3>
-                        <p class="text-sm text-gray-600 mt-1">Fitur digitasi memungkinkan pengguna untuk menambahkan titik, garis, atau poligon langsung di atas peta. Gunakan alat gambar yang tersedia di toolbar untuk membuat objek spasial baru.</p>
-                    </div>
-                </div>
-                <div class="border border-gray-200 rounded-lg p-5 flex items-start gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-bold">4</span>
-                    <div>
-                        <h3 class="text-base font-semibold text-gray-800">Import dan Export Data</h3>
-                        <p class="text-sm text-gray-600 mt-1">Data spasial dapat diimport dalam format SHP (Shapefile), GeoJSON, CSV, dan KML. Export data tersedia dalam format SHP, GeoJSON, dan Excel. Pastikan file SHP memiliki ekstensi .shp, .shx, dan .dbf yang lengkap.</p>
-                    </div>
-                </div>
-                <div class="border border-gray-200 rounded-lg p-5 flex items-start gap-4">
-                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-bold">5</span>
-                    <div>
-                        <h3 class="text-base font-semibold text-gray-800">Analisis Spasial</h3>
-                        <p class="text-sm text-gray-600 mt-1">Fitur analisis meliputi buffer (zona penyangga), pengukuran jarak dan luas, serta pencarian berdasarkan radius. Hasil analisis dapat ditampilkan langsung di peta dan diexport untuk laporan.</p>
-                    </div>
-                </div>
+                @empty
+                    <p class="text-gray-400 text-sm text-center py-8">Belum ada panduan teknis.</p>
+                @endforelse
             </div>
         </div>
     </div>

@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             KategoriSeeder::class,
             WilayahSeeder::class,
             LayerSeeder::class,
+            InformasiSeeder::class,
         ]);
 
         $admin = User::create([

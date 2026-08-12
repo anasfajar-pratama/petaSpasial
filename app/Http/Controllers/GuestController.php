@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\KategoriLayer;
 use App\Models\District;
+use App\Models\Informasi;
 use App\Models\Layer;
 use App\Models\DataSpasial;
 use App\Models\Feedback;
@@ -161,22 +162,34 @@ class GuestController extends Controller
 
     public function berita()
     {
-        return view('guest.informasi.berita');
+        $items = Informasi::tipe('berita')->where('is_active', true)
+            ->orderBy('urutan')->orderByDesc('tanggal')->get();
+
+        return view('guest.informasi.berita', compact('items'));
     }
 
     public function infografis()
     {
-        return view('guest.informasi.infografis');
+        $items = Informasi::tipe('infografis')->where('is_active', true)
+            ->orderBy('urutan')->get();
+
+        return view('guest.informasi.infografis', compact('items'));
     }
 
     public function panduanTeknis()
     {
-        return view('guest.informasi.panduan-teknis');
+        $items = Informasi::tipe('panduan')->where('is_active', true)
+            ->orderBy('urutan')->get();
+
+        return view('guest.informasi.panduan-teknis', compact('items'));
     }
 
     public function risetPublikasi()
     {
-        return view('guest.informasi.riset-publikasi');
+        $items = Informasi::tipe('riset')->where('is_active', true)
+            ->orderBy('urutan')->get();
+
+        return view('guest.informasi.riset-publikasi', compact('items'));
     }
 
     public function kritikSaran()

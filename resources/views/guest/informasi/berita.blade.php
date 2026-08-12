@@ -16,21 +16,20 @@
             </div>
             <hr class="mb-6">
             <div class="space-y-6">
-                <div class="border border-gray-200 rounded-lg p-5">
-                    <p class="text-xs text-blue-600 font-semibold uppercase tracking-wide">25 Juli 2026</p>
-                    <h3 class="text-lg font-semibold text-gray-800 mt-1">Peluncuran Sistem Informasi Geospasial Kota Sukabumi</h3>
-                    <p class="text-sm text-gray-600 mt-2">Pemerintah Kota Sukabumi resmi meluncurkan portal data spasial terintegrasi untuk mendukung perencanaan pembangunan berbasis data. Sistem ini menyediakan akses publik ke berbagai data spasial termasuk batas administrasi, infrastruktur, dan tata ruang.</p>
-                </div>
-                <div class="border border-gray-200 rounded-lg p-5">
-                    <p class="text-xs text-blue-600 font-semibold uppercase tracking-wide">18 Juli 2026</p>
-                    <h3 class="text-lg font-semibold text-gray-800 mt-1">Pembaruan Data RTRW Kota Sukabumi 2022-2042</h3>
-                    <p class="text-sm text-gray-600 mt-2">Data Rencana Tata Ruang Wilayah (RTRW) Kota Sukabumi periode 2022-2042 telah diperbarui dan dapat diakses melalui platform ini. Masyarakat dapat melihat rencana pola ruang, jaringan infrastruktur, dan kawasan strategis.</p>
-                </div>
-                <div class="border border-gray-200 rounded-lg p-5">
-                    <p class="text-xs text-blue-600 font-semibold uppercase tracking-wide">10 Juli 2026</p>
-                    <h3 class="text-lg font-semibold text-gray-800 mt-1">Bimtek Penggunaan Portal Spasial bagi OPD</h3>
-                    <p class="text-sm text-gray-600 mt-2">Dinas Komunikasi dan Informatika Kota Sukabumi menyelenggarakan bimbingan teknis penggunaan portal data spasial bagi seluruh Organisasi Perangkat Daerah (OPD) untuk mendukung digitalisasi perencanaan daerah.</p>
-                </div>
+                @forelse ($items as $item)
+                    <div class="border border-gray-200 rounded-lg p-5 flex gap-4">
+                        @if ($item->gambar)
+                            <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" class="w-32 h-24 object-cover rounded-lg flex-shrink-0">
+                        @endif
+                        <div class="flex-1">
+                            <p class="text-xs text-blue-600 font-semibold uppercase tracking-wide">{{ $item->tanggal?->format('d F Y') ?? '' }}</p>
+                            <h3 class="text-lg font-semibold text-gray-800 mt-1">{{ $item->judul }}</h3>
+                            <p class="text-sm text-gray-600 mt-2">{{ $item->isi }}</p>
+                        </div>
+                    </div>
+                @empty
+                    <p class="text-gray-400 text-sm text-center py-8">Belum ada berita.</p>
+                @endforelse
             </div>
         </div>
     </div>
