@@ -17,16 +17,18 @@
             <hr class="mb-6">
             <div class="space-y-6">
                 @forelse ($items as $item)
-                    <div class="border border-gray-200 rounded-lg p-5 flex gap-4">
+                    <a href="{{ route('informasi.detail', ['tipe' => $item->tipe, 'informasi' => $item->id]) }}" class="block group border border-gray-200 rounded-lg p-5 flex gap-4 hover:border-blue-300 hover:shadow-md transition">
                         @if ($item->gambar)
                             <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" class="w-32 h-24 object-cover rounded-lg flex-shrink-0">
+                        @elseif ($item->videoId())
+                            <img src="https://img.youtube.com/vi/{{ $item->videoId() }}/hqdefault.jpg" alt="{{ $item->judul }}" class="w-32 h-24 object-cover rounded-lg flex-shrink-0">
                         @endif
                         <div class="flex-1">
                             <p class="text-xs text-blue-600 font-semibold uppercase tracking-wide">{{ $item->tanggal?->format('d F Y') ?? '' }}</p>
-                            <h3 class="text-lg font-semibold text-gray-800 mt-1">{{ $item->judul }}</h3>
+                            <h3 class="text-lg font-semibold text-gray-800 mt-1 group-hover:text-blue-600">{{ $item->judul }}</h3>
                             <p class="text-sm text-gray-600 mt-2">{{ $item->isi }}</p>
                         </div>
-                    </div>
+                    </a>
                 @empty
                     <p class="text-gray-400 text-sm text-center py-8">Belum ada berita.</p>
                 @endforelse

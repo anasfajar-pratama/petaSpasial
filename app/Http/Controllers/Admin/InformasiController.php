@@ -40,7 +40,13 @@ class InformasiController extends Controller
         $data = $this->validated($request);
         $data['tipe'] = $request->input('tipe');
         $data['is_active'] = $request->boolean('is_active');
-        $data['gambar'] = $this->uploadImage($request);
+
+        if ($request->input('media_type', 'gambar') === 'video') {
+            $data['gambar'] = null;
+        } else {
+            $data['gambar'] = $this->uploadImage($request);
+            $data['video_url'] = null;
+        }
 
         Informasi::create($data);
 
@@ -62,9 +68,17 @@ class InformasiController extends Controller
         $data['tipe'] = $informasi->tipe;
         $data['is_active'] = $request->boolean('is_active');
 
-        if ($request->hasFile('gambar')) {
+        if ($request->input('media_type', 'gambar') === 'video') {
             $this->deleteImage($informasi);
-            $data['gambar'] = $this->uploadImage($request);
+            $data['gambar'] = null;
+        } else {
+            if ($request->hasFile('gambar')) {
+                $this->deleteImage($informasi);
+                $data['gambar'] = $this->uploadImage($request);
+            } else {
+                $data['gambar'] = $informasi->gambar;
+            }
+            $data['video_url'] = null;
         }
 
         $informasi->update($data);
@@ -93,6 +107,7 @@ class InformasiController extends Controller
             'tanggal' => 'nullable|date',
             'urutan' => 'required|integer|min:0',
             'gambar' => 'nullable|image|mimes:jpg,jpeg,png,webp,gif|max:5120',
+            'video_url' => 'nullable|url|max:255',
         ]);
     }
 

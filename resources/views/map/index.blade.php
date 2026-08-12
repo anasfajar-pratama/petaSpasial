@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Peta Interaktif - {{ config('app.name', 'petaSpasial') }}</title>
+    <title>Peta Interaktif - {{ \App\Models\Setting::getValue('site_name', 'petaSpasial') }}</title>
     @vite(['resources/css/app.css', 'resources/js/map.js'])
 </head>
 <body class="m-0 p-0 overflow-hidden font-sans">
@@ -35,7 +35,7 @@
     <div id="top-nav" class="fixed top-5 left-5 right-5 z-[1000] bg-white rounded-[40px] shadow-[0_4px_15px_rgba(0,0,0,0.15)] h-[85px] flex items-center justify-between px-8">
         <a href="{{ url('/') }}" class="flex items-center gap-3 flex-shrink-0">
             <div class="w-9 h-9 rounded-lg bg-[#0C3F8A] flex items-center justify-center text-white font-bold text-sm">PS</div>
-            <span class="font-bold text-[#1E1E1E] text-lg">petaSpasial</span>
+            <span class="font-bold text-[#1E1E1E] text-lg">{{ \App\Models\Setting::getValue('site_name', 'petaSpasial') }}</span>
         </a>
         <div class="flex items-center gap-8">
             <a href="{{ route('dashboard') }}" class="text-[#1E1E1E] font-medium text-sm hover:text-[#0C3F8A] transition-colors">Dashboard</a>

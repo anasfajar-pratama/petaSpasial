@@ -17,19 +17,21 @@
             <hr class="mb-6">
             <div class="space-y-6">
                 @forelse ($items as $item)
-                    <div class="border border-gray-200 rounded-lg p-5 flex gap-4">
+                    <a href="{{ route('informasi.detail', ['tipe' => $item->tipe, 'informasi' => $item->id]) }}" class="block group border border-gray-200 rounded-lg p-5 flex gap-4 hover:border-purple-300 hover:shadow-md transition">
                         @if ($item->gambar)
                             <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" class="w-32 h-24 object-cover rounded-lg flex-shrink-0">
+                        @elseif ($item->videoId())
+                            <img src="https://img.youtube.com/vi/{{ $item->videoId() }}/hqdefault.jpg" alt="{{ $item->judul }}" class="w-32 h-24 object-cover rounded-lg flex-shrink-0">
                         @endif
                         <div class="flex-1">
                             <span class="inline-block text-xs font-semibold text-white bg-purple-600 px-2 py-0.5 rounded mb-2">{{ $item->jenis ?? 'Publikasi' }}</span>
-                            <h3 class="text-base font-semibold text-gray-800">{{ $item->judul }}</h3>
+                            <h3 class="text-base font-semibold text-gray-800 group-hover:text-purple-600">{{ $item->judul }}</h3>
                             @if ($item->penulis || $item->tahun)
                                 <p class="text-sm text-gray-500 mt-1">{{ trim(($item->penulis ?? '') . ($item->tahun ? ' · ' . $item->tahun : '')) }}</p>
                             @endif
                             <p class="text-sm text-gray-600 mt-2">{{ $item->isi }}</p>
                         </div>
-                    </div>
+                    </a>
                 @empty
                     <p class="text-gray-400 text-sm text-center py-8">Belum ada riset dan publikasi.</p>
                 @endforelse

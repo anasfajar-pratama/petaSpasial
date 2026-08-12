@@ -30,7 +30,7 @@
         <table class="w-full">
             <thead class="bg-gray-50">
                 <tr>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Gambar</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Media</th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Judul</th>
                     @if ($tipe === 'riset')
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Jenis</th>
@@ -49,6 +49,13 @@
                     <td class="px-6 py-4">
                         @if ($item->gambar)
                             <img src="{{ asset('storage/' . $item->gambar) }}" alt="" class="w-14 h-10 object-cover rounded border">
+                        @elseif ($item->videoId())
+                            <div class="relative w-14 h-10 rounded border overflow-hidden flex-shrink-0 bg-gray-100">
+                                <img src="https://img.youtube.com/vi/{{ $item->videoId() }}/hqdefault.jpg" alt="" class="w-full h-full object-cover">
+                                <span class="absolute inset-0 flex items-center justify-center bg-black/30">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </span>
+                            </div>
                         @else
                             <span class="inline-block w-14 h-10 rounded border bg-gray-100"></span>
                         @endif

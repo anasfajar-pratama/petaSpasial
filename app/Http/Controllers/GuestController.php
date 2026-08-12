@@ -192,6 +192,21 @@ class GuestController extends Controller
         return view('guest.informasi.riset-publikasi', compact('items'));
     }
 
+    public function detailInformasi(string $tipe, Informasi $informasi)
+    {
+        abort_unless(in_array($tipe, Informasi::TIPES), 404);
+        abort_unless($informasi->tipe === $tipe && $informasi->is_active, 404);
+
+        $sidebars = [];
+        foreach (Informasi::TIPES as $t) {
+            $sidebars[$t] = Informasi::tipe($t)->where('is_active', true)
+                ->orderBy('urutan')->orderByDesc('tanggal')
+                ->limit(6)->get(['id', 'judul', 'tipe']);
+        }
+
+        return view('guest.informasi.detail', compact('informasi', 'tipe', 'sidebars'));
+    }
+
     public function kritikSaran()
     {
         return view('guest.kritik-saran');

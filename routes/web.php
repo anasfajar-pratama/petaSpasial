@@ -15,6 +15,7 @@ Route::middleware(['track.visitor'])->group(function () {
         Route::get('/infografis', [App\Http\Controllers\GuestController::class, 'infografis'])->name('infografis');
         Route::get('/panduan-teknis', [App\Http\Controllers\GuestController::class, 'panduanTeknis'])->name('panduan-teknis');
         Route::get('/riset-publikasi', [App\Http\Controllers\GuestController::class, 'risetPublikasi'])->name('riset-publikasi');
+        Route::get('/{tipe}/{informasi}', [App\Http\Controllers\GuestController::class, 'detailInformasi'])->name('detail');
     });
 
     Route::get('/kritik-saran', [App\Http\Controllers\GuestController::class, 'kritikSaran'])->name('kritik-saran');
