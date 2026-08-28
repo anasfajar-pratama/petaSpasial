@@ -8,10 +8,12 @@ use App\Models\Informasi;
 use App\Models\Layer;
 use App\Models\DataSpasial;
 use App\Models\Feedback;
+use App\Models\Pengaduan;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Intervention\Image\Laravel\Facades\Image;
 
 class GuestController extends Controller
@@ -255,6 +257,65 @@ class GuestController extends Controller
         ]);
 
         return redirect()->route('kritik-saran')->with('success', 'Terima kasih! Kritik dan saran Anda telah kami terima.');
+    }
+
+    public function pengaduan()
+    {
+        return view('guest.pengaduan');
+    }
+
+    public function kirimPengaduan(Request $request)
+    {
+        $validated = $request->validate([
+            'nik'       => 'required|digits:16',
+            'nama'      => 'required|string|max:100',
+            'email'     => 'required|email|max:100',
+            'no_hp'     => 'required|string|max:20|regex:/^[0-9+\-\s]+$/',
+            'foto'      => 'nullable|image|mimes:jpg,jpeg,png,gif|max:5120',
+            'latitude'  => 'nullable|numeric|between:-90,90',
+            'longitude' => 'nullable|numeric|between:-180,180',
+            'maps_link' => 'nullable|url|max:1000',
+        ]);
+
+        Storage::disk('public')->makeDirectory('pengaduan');
+
+        $foto_path = null;
+        if ($request->hasFile('foto')) {
+            $img = Image::read($request->file('foto')->getRealPath());
+            $encoded = $img->toWebp(80);
+            $filename = 'foto_' . time() . '_' . uniqid() . '.webp';
+            $encoded->save(storage_path('app/public/pengaduan/' . $filename));
+            $foto_path = 'pengaduan/' . $filename;
+        }
+
+        do {
+            $no = 'PDG-' . date('Ymd') . '-' . strtoupper(Str::random(5));
+        } while (Pengaduan::where('no_pengaduan', $no)->exists());
+
+        Pengaduan::create([
+            'no_pengaduan' => $no,
+            'nik' => $validated['nik'],
+            'nama' => $validated['nama'],
+            'email' => $validated['email'],
+            'no_hp' => $validated['no_hp'],
+            'foto' => $foto_path,
+            'latitude' => $request->filled('latitude') ? $validated['latitude'] : null,
+            'longitude' => $request->filled('longitude') ? $validated['longitude'] : null,
+            'maps_link' => $validated['maps_link'],
+        ]);
+
+        return redirect()->route('pengaduan')
+            ->with('success', 'Pengaduan berhasil dikirim. Simpan nomor pengaduan Anda untuk cek status.')
+            ->with('no_pengaduan', $no);
+    }
+
+    public function cekPengaduan(Request $request)
+    {
+        $pengaduan = $request->filled('no')
+            ? Pengaduan::where('no_pengaduan', $request->no)->first()
+            : null;
+
+        return view('guest.cek-pengaduan', compact('pengaduan'));
     }
 
     public function faq()

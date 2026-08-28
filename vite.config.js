@@ -11,6 +11,7 @@ export default defineConfig({
                 'resources/js/map-public.js',
                 'resources/js/dashboard.js',
                 'resources/js/kritik-saran.js',
+                'resources/js/pengaduan.js',
             ],
             refresh: true,
         }),

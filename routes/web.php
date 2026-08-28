@@ -20,6 +20,9 @@ Route::middleware(['track.visitor'])->group(function () {
 
     Route::get('/kritik-saran', [App\Http\Controllers\GuestController::class, 'kritikSaran'])->name('kritik-saran');
     Route::post('/kritik-saran', [App\Http\Controllers\GuestController::class, 'kirimKritikSaran'])->name('kritik-saran.kirim');
+    Route::get('/pengaduan', [App\Http\Controllers\GuestController::class, 'pengaduan'])->name('pengaduan');
+    Route::post('/pengaduan', [App\Http\Controllers\GuestController::class, 'kirimPengaduan'])->name('pengaduan.kirim');
+    Route::get('/cek-pengaduan', [App\Http\Controllers\GuestController::class, 'cekPengaduan'])->name('cek-pengaduan');
     Route::get('/faq', [App\Http\Controllers\GuestController::class, 'faq'])->name('faq');
 });
 
@@ -72,6 +75,9 @@ Route::middleware(['auth', 'role:Administrator'])->prefix('admin')->name('admin.
     Route::get('/kritik-saran', [App\Http\Controllers\Admin\FeedbackController::class, 'index'])->name('kritik-saran.index');
     Route::get('/kritik-saran/{feedback}', [App\Http\Controllers\Admin\FeedbackController::class, 'show'])->name('kritik-saran.show');
     Route::patch('/kritik-saran/{feedback}/read', [App\Http\Controllers\Admin\FeedbackController::class, 'markAsRead'])->name('kritik-saran.read');
+    Route::get('/pengaduan', [App\Http\Controllers\Admin\PengaduanController::class, 'index'])->name('pengaduan.index');
+    Route::get('/pengaduan/{pengaduan}', [App\Http\Controllers\Admin\PengaduanController::class, 'show'])->name('pengaduan.show');
+    Route::patch('/pengaduan/{pengaduan}', [App\Http\Controllers\Admin\PengaduanController::class, 'update'])->name('pengaduan.update');
 });
 
 Route::middleware(['auth', 'role:Administrator|Operator'])->prefix('admin')->name('admin.')->group(function () {
